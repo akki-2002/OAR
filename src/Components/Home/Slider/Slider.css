@@ -1,0 +1,52 @@
+/* Text Section */
+.slider-text-container {
+    text-align: center;
+    margin-top: 90px; 
+  }
+  
+.innovative-designs {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 82px;
+    color: #FFFFFF;
+    letter-spacing: -0.06em;
+    line-height: 1.1em;
+    font-style: italic;
+  }
+  
+.seamless-solutions {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+    color: #FFC940;
+    margin-top: 8px;
+    line-height: 1.2em;
+}
+
+/* Slider container */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 500px; 
+}
+
+/* Wrapper for all slides */
+.slider-wrapper {
+  display: flex;
+  width: 100%; 
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each individual slide */
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}

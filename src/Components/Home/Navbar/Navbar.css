@@ -1,0 +1,129 @@
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 28px;
+    position: relative;
+  }
+  
+  .navbar-logo .logo-bold {
+    font-family: "Gajraj One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #FFC940;
+  }
+  
+  .navbar-logo .studios {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #FFFFFF;
+    font-size: 32px;
+  }
+  
+  .hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger img {
+    width: 88px;
+    height: 41px;
+  }
+  
+
+  /* Overlay styles */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 700px;
+    background: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: right 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .menu-overlay.open {
+    right: 0;
+  }
+  
+  /* Menu Links */
+  .menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-links li {
+    margin: 20px 0;
+  }
+  
+  .menu-links a {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 80px;
+    line-height: 0.7em;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .menu-links a:hover {
+    background-color: #FFC940; 
+    color: #141414; 
+    transform: scale(1.1); 
+  }
+  
+  .menu-links a:hover .arrow-down {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  
+  /* Arrow down icon */
+  .arrow-down {
+    width: 40px;
+    height: 40px;
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+    background-color: #FFC940;
+  }
+  
+/* Line below Navbar */
+.navbar::after {
+    margin-top: 80px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.8px;
+    background-color: #4D4D4D;
+    position: absolute;
+    /* bottom: 0; */
+    left: 0;
+  }
+  
+
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .menu-overlay {
+      display: none;
+    }
+  }
+  
+  
