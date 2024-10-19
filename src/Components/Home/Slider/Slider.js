@@ -13,7 +13,12 @@ const Slider = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [ss, setSs] = useState({
+    bottom: '-100px'
+  })
+  const [id, setId] = useState({
+    top: '-100px'
+  })
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +27,14 @@ const Slider = () => {
       );
     }, 3000); 
 
+    setSs({
+      bottom: '0'
+    })
+
+    setId({
+      top: '0'
+    })
+
     return () => clearInterval(interval); 
   }, [images.length]);
 
@@ -29,8 +42,8 @@ const Slider = () => {
     <>
 
       <div className="slider-text-container">
-        <h1 className="innovative-designs">Innovative Designs</h1>
-        <h2 className="seamless-solutions">SEAMLESS SOLUTIONS</h2>
+        <h1 className="innovative-designs" style={id}>Innovative Designs</h1>
+        <h2 className="seamless-solutions" style={ss}>SEAMLESS SOLUTIONS</h2>
       </div>
 
 

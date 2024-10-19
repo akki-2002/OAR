@@ -1,0 +1,64 @@
+/* Text Section */
+.slider-text-container {
+    text-align: center;
+    margin-top: 90px; 
+    /* border: 1px solid white; */
+  }
+  
+.innovative-designs {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 82px;
+    color: #FFFFFF;
+    letter-spacing: -0.06em;
+    line-height: 1.1em;
+    font-style: italic;
+    position: relative;
+    /* top: 100px; */
+    transition: all 0.4s ease-in-out;
+  }
+  
+.seamless-solutions {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+    color: #FFC940;
+    margin-top: 8px;
+    line-height: 1.2em;
+    position: relative;
+    /* bottom: -100px; */
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+.sliderMain {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.sliderMain .slider{
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* animation: slide infinite 5s linear; */
+    border: 1px solid white;
+}
+
+.sliderMain .slider:hover{
+    animation-duration: 7s;
+}
+  
+@keyframes slide {
+    0%{
+        right: 0;
+    }
+    100%{
+        right: 1000px;
+    }
+}
+
+  
+  
