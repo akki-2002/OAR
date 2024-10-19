@@ -1,0 +1,49 @@
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center;
+    background-color: #141414; */
+    color: #fff;
+    /* padding: 20px; */
+    /* height: 200px; */
+    border: 1px solid #4D4D4D;
+  }
+  
+  .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-right: 2px solid #444; */
+  }
+  
+  .logo {
+    font-size: 130px;
+    font-weight: bold;
+    color: #FFC940; 
+    font-family: "Gajraj One", sans-serif;
+  }
+  
+  .text-container {
+    flex: 2;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #444; /* Add left border */
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .text-container p {
+    margin: 0;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
