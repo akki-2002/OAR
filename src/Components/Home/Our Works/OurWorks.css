@@ -87,11 +87,12 @@
     z-index: 2; /* Ensure it's above the overlay */
     background: transparent;
     transition: transform 0.5s ease-in-out;
+    z-index: 3;
 }
 
 /* On hover, move the h3 text completely out to the right */
 .work-item:hover h3 {
-    transform: translateX(150%) rotate(180deg); /* Move it to the right beyond the container */
+    transform: translateX(65%) rotate(180deg); /* Move it to the right beyond the container */
 }
 
 /* Paragraph styling */
@@ -111,6 +112,9 @@
     font-family: 'Montserrat';
     font-style: italic;
     text-align: left;
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: end;
 }
 
 /* On hover, the paragraph fades in */
