@@ -1,0 +1,147 @@
+/* Container for the entire section */
+.our-works-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 80px;
+    color: white;
+}
+
+.heading h2 {
+    font-size: 49px;
+    text-align: left;
+    background: linear-gradient(70deg, rgb(255, 255, 255) -21%, rgb(77, 77, 77) 52%);
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;         /* Standard property */
+    color: transparent;            /* Make the text transparent so the background shows through */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.heading span {
+    display: block;
+    font-size: 49px;
+    margin-top: 10px;
+    background: linear-gradient(70deg, rgb(255, 255, 255) -21%, rgb(77, 77, 77) 52%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* Work grid for images */
+.work-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: 40px;
+}
+
+/* Work item styling */
+.work-item {
+    width: 349px;
+    height: 600px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    will-change: transform;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Pseudo-element to add the yellow overlay */
+.work-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 201, 64, 0.87); /* Semi-transparent yellow */
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Image background visible underneath the overlay */
+.work-item:hover::before {
+    opacity: 0; /* On hover, remove the overlay */
+}
+
+/* Heading styles for vertical text */
+.work-item h3 {
+    writing-mode: vertical-lr;
+    font-size: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+    line-height: 0.8em;
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure it's above the overlay */
+    background: transparent;
+    transition: transform 0.5s ease-in-out;
+    z-index: 3;
+}
+
+/* On hover, move the h3 text completely out to the right */
+.work-item:hover h3 {
+    transform: translateX(65%) rotate(180deg); /* Move it to the right beyond the container */
+}
+
+/* Paragraph styling */
+.work-item p {
+    opacity: 0;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient( transparent, 42%, rgba(0,0,0,0.9));
+    padding: 20px;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    line-height: 1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Ensure it's above the overlay */
+    font-family: 'Montserrat';
+    font-style: italic;
+    text-align: left;
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: end;
+}
+
+/* On hover, the paragraph fades in */
+.work-item:hover p {
+    opacity: 1;
+}
+
+/* On hover, increase brightness to make the image clearer */
+.work-item:hover {
+    filter: brightness(1.2); /* Increase brightness slightly */
+}
+
+
+
+/* Add background images */
+.design {
+    background-image: url('../../../Images/work1.jpg');
+}
+
+.development {
+    background-image: url('../../../Images/work2.jpg');
+}
+
+.branding {
+    background-image: url('../../../Images/work3.jpg');
+}
+
+.digital-marketing {
+    background-image: url('../../../Images/work4.jpg');
+}
