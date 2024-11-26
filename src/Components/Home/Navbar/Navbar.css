@@ -6,6 +6,11 @@
     align-items: center;
     padding: 8px 28px;
     position: relative;
+    z-index: 1;
+  }
+
+  .menu-overlay nav{
+    width: 80%;
   }
   
   .navbar-logo .logo-bold {
@@ -62,11 +67,15 @@
   
   .menu-links li {
     margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
   
   .menu-links a {
     font-family: "Inter Tight", sans-serif;
     font-weight: bold;
+    width: 100%;
     color: #FFFFFF;
     font-size: 80px;
     line-height: 0.7em;
@@ -75,19 +84,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 6px 0;
+    transition:all 0.5s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
   }
   
   .menu-links a:hover {
-    background-color: #FFC940; 
+    /* background-color: #FFC940;  */
     color: #141414; 
-    transform: scale(1.1); 
+    font-size: 100px;
+    padding: 0;
+    
+  }
+
+  .menu-links li::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 0;
+    height: 100%;
+    transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .menu-links li:hover::after{
+    width: 100%;
+    background-color:  #FFC940;
   }
   
-  .menu-links a:hover .arrow-down {
+  .menu-links li  :hover .arrow-down {
     opacity: 1;
-    transform: translateY(0); 
+    transform: rotateZ(0deg); 
+    transition-delay: 0.3s;
   }
   
   /* Arrow down icon */
@@ -95,9 +125,11 @@
     width: 40px;
     height: 40px;
     opacity: 0; 
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(-20px);
-    background-color: #FFC940;
+    transition: all 0.3s ease, transform 0.3s ease;
+    transform: rotateZ(90deg);
+    transform-origin: right;
+    background-color: transparent;
+    margin-right: 15px;
   }
   
 /* Line below Navbar */
