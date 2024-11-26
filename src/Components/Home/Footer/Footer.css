@@ -1,0 +1,119 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    border-top: 2px solid rgb(77, 77, 77);
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .footer-left {
+    width: 25%;
+    padding: 6rem 3rem;
+    border-right: 2px solid rgb(77, 77, 77);
+  }
+  
+  .footer-left h2 {
+    font-size: 72px;
+    color: rgb(255, 201, 64);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+  
+  .footer-right {
+    width: 75%;
+    padding: 3rem 2rem;
+  }
+  
+  .footer-right-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copy-email-container {
+    display: flex;
+    align-items: center; /* Vertically align text and icon */
+    gap: 8px; /* Add space between the text and the icon */
+  }
+  
+  .footer-right h3 {
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #EDEAE4;
+    margin: 0; /* Remove unnecessary margin */
+  }
+  
+  .copy-email {
+    font-size: 24px;
+    color: rgb(255, 201, 64);
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .copy-email-container img {
+    width: 22px; /* Adjust size of the icon */
+    /* height: auto; */
+  }
+  
+  
+  .email {
+    font-size: 89px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: #4D4D4D;
+  }
+  
+
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .services-checkboxes label {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #EDEAE4;
+  }
+
+  input[type="checkbox"]{
+    font-family: "Inter", sans-serif;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #EDEAE4;
+  }
+
+  .services-heading{
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    color: #EDEAE4;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+
+  textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+  
+ 
+  

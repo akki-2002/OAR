@@ -1,0 +1,148 @@
+/* Slick Slider CSS */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.latest-article {
+  padding: 5rem 0.6rem 5rem 5rem;
+
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.latest-article-title h2 {
+  font-size: 49px;
+  text-align: left;
+  background: linear-gradient(
+    70deg,
+    rgb(255, 255, 255) -21%,
+    rgb(77, 77, 77) 52%
+  );
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text; /* Standard property */
+  color: transparent; /* Make the text transparent so the background shows through */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.article-card {
+  border: 2px solid rgb(77, 77, 77); /* Border applied here */
+  border-radius: 20px; /* Radius applies to entire card */
+  overflow: hidden; /* Ensures content stays inside the rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.article-content {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #b0b0b0;
+}
+
+.category {
+  background-color: rgb(229, 170, 242);
+  border-radius: 6px;
+  opacity: 1;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(20, 20, 20);
+  font-family: "Montserrat", sans-serif;
+}
+
+.time {
+  color: rgb(77, 77, 77);
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.article-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: left;
+  color: var(--extracted-2gxw0f, rgb(237, 237, 237));
+}
+
+
+.article-card {
+  border: 2px solid rgb(77, 77, 77); /* Border applied here */
+  border-radius: 20px; /* Radius applies to the entire card */
+  overflow: hidden; /* Ensures content stays inside the rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+.slick-track{
+    display: flex;
+    gap: 20px;
+}
+
+/* Position arrow navigation inside */
+.slick-prev,
+.slick-next {
+  z-index: 10; /* Ensure arrows are above other elements */
+
+  border-radius: 50%; /* Make them circular */
+  height: 40px;
+  width: 40px;
+
+}
+
+/* Customize the left arrow */
+.slick-prev::before {
+  left: 5px; /* Position inside the container */
+  display: none;
+}
+
+/* Customize the right arrow */
+.slick-next {
+  right: 5px; /* Position inside the container */
+}
+
+.slick-next:before {
+  display: block;
+  font-family: "slick";
+  font-size: 40px;
+  line-height: 1;
+  opacity: 0.75;
+
+}
+
+/* Ensure the cards have some spacing in smaller screens */
+@media (max-width: 768px) {
+  .article-card {
+    margin: 0 5px; /* Adjust spacing for smaller screens */
+  }
+}
+
+
+.bottom-line {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(77, 77, 77); /* Adjust the color as needed */
+  }
+  
