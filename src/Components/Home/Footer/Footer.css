@@ -1,119 +1,180 @@
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0;
-    border-top: 2px solid rgb(77, 77, 77);
-    color: #fff;
-    background-color: #000;
-  }
-  
-  .footer-left {
-    width: 25%;
-    padding: 6rem 3rem;
-    border-right: 2px solid rgb(77, 77, 77);
-  }
-  
-  .footer-left h2 {
-    font-size: 72px;
-    color: rgb(255, 201, 64);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-  }
-  
-  .footer-right {
-    width: 75%;
-    padding: 3rem 2rem;
-  }
-  
-  .footer-right-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  border-top: 1px solid rgb(40, 40, 40);
+  color: #fff;
+  background-color: #000;
+}
 
-  .copy-email-container {
-    display: flex;
-    align-items: center; /* Vertically align text and icon */
-    gap: 8px; /* Add space between the text and the icon */
-  }
-  
-  .footer-right h3 {
-    font-size: 24px;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    color: #EDEAE4;
-    margin: 0; /* Remove unnecessary margin */
-  }
-  
-  .copy-email {
-    font-size: 24px;
-    color: rgb(255, 201, 64);
-    cursor: pointer;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
+.footer-left {
+  width: 25%;
+  padding: 6rem 3rem;
+  border-right:  1px solid rgb(40, 40, 40);
+}
 
-  .copy-email-container img {
-    width: 22px; /* Adjust size of the icon */
-    /* height: auto; */
-  }
-  
-  
-  .email {
-    font-size: 89px;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    color: #4D4D4D;
-  }
-  
+.footer-left h2 {
+  font-size: 102px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: #edeae4;
+  line-height: 0.8em;
+  background: linear-gradient(
+    102deg,
+    rgb(255, 255, 255) 0%,
+    rgba(0, 0, 0, 0) 119%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  .services-checkboxes label {
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: 100;
-    color: #EDEAE4;
-  }
+.footer-right {
+  width: 75%;
+  padding: 3rem 5rem;
+}
 
-  input[type="checkbox"]{
-    font-family: "Inter", sans-serif;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: 100;
-    color: #EDEAE4;
-  }
+.footer-right-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
-  .services-heading{
-    font-size: 24px;
-    font-family: "Inter", sans-serif;
-    color: #EDEAE4;
-  }
-  
-  input[type="text"],
-  input[type="email"],
+.copy-email-container {
+  display: flex;
+  align-items: center; /* Vertically align text and icon */
+  gap: 8px; /* Add space between the text and the icon */
+}
 
-  textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border: 1px solid rgb(77, 77, 77);
-    border-radius: 4px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-  }
-  
-  textarea {
-    resize: none;
-    height: 120px;
-  }
-  
- 
-  
+.footer-right h3 {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #edeae4;
+  margin: 0; /* Remove unnecessary margin */
+}
+
+.copy-email {
+  font-size: 24px;
+  color: rgb(255, 201, 64);
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.copy-email-container img {
+  width: 22px; /* Adjust size of the icon */
+  /* height: auto; */
+}
+
+.email {
+  font-size: 59px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #edeae4;
+}
+
+.email:hover{
+  color: rgb(255, 201, 64);
+  cursor: pointer;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Add space between the fields */
+}
+
+.form-row label {
+  flex: 1; /* Make each label take up equal space */
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  color: #EDEAE4;
+}
+
+.services-checkboxes{
+  margin: 1.5rem 0rem 2.5rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-checkboxes label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #edeae4;
+}
+
+input[type="checkbox"] {
+  font-family: "Inter", sans-serif;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  color: #edeae4;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(40,40,40); /* Box border */
+}
+
+.services-heading {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  color: #edeae4;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: none;
+  border-bottom:  1px solid rgb(40, 40, 40);
+  background-color: transparent;
+  padding: 8px;
+  font-size: 16px;
+  color: #EDEAE4;
+  font-family: "Montserrat", sans-serif;
+  outline: none; /* Remove blue outline on focus */
+  margin-bottom: 3rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-bottom: 2px solid #EDEAE4; /* Change border color on focus */
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid rgb(40, 40, 40);
+  background-color: transparent;
+  width: 100%;
+  resize: none; /* Disable resizing */
+  color: #EDEAE4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  outline: none; /* Remove blue outline on focus */
+  margin-top: 2rem;
+}
+
+textarea:focus {
+  border-bottom: 2px solid #EDEAE4; /* Change bottom border color on focus */
+}
+
+.msgg{
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  margin-top: 1rem;
+}
+
