@@ -46,7 +46,9 @@ const OurProjects = () => {
         <h2>
             Our Work
         </h2>
+
       </div>
+      <div className="shadow"></div>
        
         <Slider {...settings} style={{marginBottom: "15px"}}>
       {images.map((image, index) => (
@@ -63,6 +65,8 @@ const OurProjects = () => {
         </div>
       ))}
     </Slider>
+
+    <div className="shadow shdw"></div>
       
     </div>
     
