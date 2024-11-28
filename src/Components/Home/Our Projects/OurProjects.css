@@ -3,6 +3,17 @@
     border-top: 1px solid #4d4d4d;
     border-bottom: 1px solid #4d4d4d;
     padding: 100px 0;
+    position: relative;
+}
+
+.shadow{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 80%;
+    background-image: linear-gradient(to right, #141414 0%, #14141400 20%, #14141400 80%, #141414 100%);
+    background-color: transparent;
 }
 
 .op .opImg{

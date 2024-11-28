@@ -29,7 +29,11 @@
     justify-content: center;
     background-color: transparent;
     height: 100%;
-    overflow: hidden;
+    width: 98%;
+  }
+
+  .op .slick-slider{
+    width: 100%;
   }
   
   .box {
