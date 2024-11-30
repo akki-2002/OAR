@@ -1,0 +1,90 @@
+.footer-main {
+    display: flex;
+  width: 100%; /* Ensure full width */
+
+  align-items: flex-start;
+  border-top: 1px solid rgb(40, 40, 40);
+  }
+  
+  .footer-main-left {
+    width: 25%; /* Consistent width with footer-left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid rgb(40, 40, 40);
+  padding: 2rem 3rem;
+  }
+  
+  .footer-main-logo {
+    font-size: 135px;
+    font-weight: bold;
+    color: #FFC940; /* Yellow color for the logo */
+ 
+    font-family: "Gajraj One";
+    margin-bottom: 10rem;
+
+  }
+  
+  .footer-main-location {
+    margin-bottom: 1rem;
+    font-size: 60px;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .footer-main-location img{
+   width: 10%;
+  }
+  
+  .footer-main-right {
+
+    width: 75%; /* Takes up the remaining width */
+  padding: 0rem 5rem;
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: space-between; /* Space out elements vertically */
+  }
+  
+  .footer-main-links ul {
+    list-style: none;
+    padding: 4rem 0rem 5rem 0rem;
+    border-bottom: 1px solid rgb(40, 40, 40);
+  }
+  
+  .footer-main-links ul li {
+    margin: 1rem 0;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    color: #EDEAE4;
+    font-weight: 600;
+  }
+  
+  .footer-main-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding: 2rem 1.5rem;
+  }
+  
+  .footer-main-social-icons {
+    display: flex;
+  }
+  
+  .footer-main-social-icons i {
+    font-size: 2.5rem;
+    margin-right: 30px;
+    cursor: pointer;
+    color: rgb(48, 48, 48);
+  }
+  
+  .footer-main-social-icons i:hover {
+    color: #ffc107; /* Highlight on hover */
+  }
+  
+  .footer-main-copyright {
+    font-size: 32px;
+    text-align: right;
+    font-family: "Bebas Neue", sans-serif;
+    color: rgb(48, 48, 48);
+  }
+  
