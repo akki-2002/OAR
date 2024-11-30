@@ -13,6 +13,9 @@ import nomadLogoDark from '../../../Images/9.png';
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
+import "../Our Projects/OurProjects.css"
+import work1 from '../../../Images/work1.jpg'
+import { Link } from "react-router-dom";
 
 const OurProjects = () => {
   const settings = {
@@ -53,6 +56,14 @@ const OurProjects = () => {
         <h2>Our Work</h2>
       </div>
       <div className="shadow"></div>
+       
+        <Slider {...settings} style={{marginBottom: "15px"}}>
+      {images.map((image, index) => (
+        <Link to={`/our-works/1}`} key={index}>
+          <img src={image} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
+        </Link>
+      ))}
+    </Slider>
 
       <Slider {...settings} style={{ marginBottom: "15px" }}>
         {images.map((image, index) => (
