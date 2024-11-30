@@ -13,8 +13,6 @@ import nomadLogoDark from '../../../Images/9.png';
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
-import "../Our Projects/OurProjects.css"
-import work1 from '../../../Images/work1.jpg'
 import { Link } from "react-router-dom";
 
 const OurProjects = () => {
@@ -35,19 +33,12 @@ const OurProjects = () => {
   };
 
   const images = [
-    { light: aceWearsLogo, dark: aceWearsLogoDark },
-    { light: nomadLogo, dark: nomadLogoDark },
-    { light: pubaLogo, dark: pubaLogoDark },
-    { light: didwaniaLogo, dark: didwaniaLogoDark },
-    { light: holaYogLogo, dark: holaYogLogoDark },
-  ];
-
-  const images2 = [
-    { light: pubaLogo, dark: pubaLogoDark },
-    { light: holaYogLogo, dark: holaYogLogoDark },
-    { light: aceWearsLogo, dark: aceWearsLogoDark },
-    { light: nomadLogo, dark: nomadLogoDark },
-    { light: didwaniaLogo, dark: didwaniaLogoDark },
+    { id: "1", light: aceWearsLogo, dark: aceWearsLogoDark },
+    { id: "2", light: didwaniaLogo, dark: didwaniaLogoDark },
+    { id: "3", light: nomadLogo, dark: nomadLogoDark },
+    { id: "4", light: pubaLogo, dark: pubaLogoDark },
+    
+    { id: "5", light: holaYogLogo, dark: holaYogLogoDark },
   ];
 
   return (
@@ -57,23 +48,20 @@ const OurProjects = () => {
       </div>
       <div className="shadow"></div>
        
-        <Slider {...settings} style={{marginBottom: "15px"}}>
-      {images.map((image, index) => (
-        <Link to={`/our-works/1}`} key={index}>
-          <img src={image.dark} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
-        </Link>
-      ))}
-    </Slider>
-    <Slider {...settings} {...settings2}>
-
-      {images.map((image, index) => (
-        <Link to={`/our-works/1}`} key={index}>
-          <img src={image.dark} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
-        </Link>
-      ))}
-    </Slider>
-
-      
+      <Slider {...settings} style={{ marginBottom: "15px" }}>
+        {images.map((image) => (
+          <Link to={`/our-works/${image.id}`} key={image.id}>
+            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg" />
+          </Link>
+        ))}
+      </Slider>
+      <Slider {...settings} {...settings2}>
+        {images.map((image) => (
+          <Link to={`/our-works/${image.id}`} key={image.id}>
+            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg" />
+          </Link>
+        ))}
+      </Slider>
     </div>
   );
 };
