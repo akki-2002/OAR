@@ -16,9 +16,11 @@ const Footer = () => {
             <img src={copy} alt="Copy icon" />
           </div>
         </div>
-        <p className="email">OARSTUDIOZ@GMAIL.COM</p>
+        <p className="email">oarstudioz@gmail.com</p>
         <form>
-          <label className="services-heading">Services that you require *</label>
+          <label className="services-heading">
+            Services that you require *
+          </label>
           <div className="services-checkboxes">
             <label>
               <input type="checkbox" name="services" value="design" />
@@ -37,16 +39,22 @@ const Footer = () => {
               OTHER
             </label>
           </div>
-          <label>
-            Name *
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email *
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Message
+
+          <div className="form-row">
+            <label>
+              Name *
+              <input type="text" name="name" required />
+              <span className="short-line"></span>
+            </label>
+            <label>
+              Email *
+              <input type="email" name="email" required />
+              <span className="short-line"></span>
+            </label>
+          </div>
+
+          <label className="msgg">
+            Message 
             <textarea name="message"></textarea>
           </label>
         </form>

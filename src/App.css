@@ -8,3 +8,35 @@
   background-color: #141414;
   margin: 0;
 }
+
+input[type="checkbox"] {
+  appearance: none; /* Removes default styling */
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(40,40,40); /* Box border */
+  border-radius: 5px;
+  background-color: transparent; /* Box color */
+  cursor: pointer;
+  padding: 0;
+}
+
+input[type="checkbox"]:checked {
+  background-color: transparent; /* Background when checked */
+  border: 2px solid rgb(40,40,40);
+  border-radius: 5px;
+
+  padding: 0;
+}
+
+input[type="checkbox"]:checked::before {
+
+  content: '✔'; /* Checkmark */
+  color: #eab114; /* Checkmark color */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
