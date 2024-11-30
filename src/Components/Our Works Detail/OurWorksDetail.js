@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import './OurWorksDetail.css';
 
 const worksData = [
@@ -11,21 +12,36 @@ const worksData = [
   },
   {
     id: "2",
-    title: "XYZ Clothing Website Design",
-    name: "XYZ CLOTHING",
+    title: "Didwania Creations Administrative Controls",
+    name: "DIDWANIA",
     category: "WEB DESIGN",
     imgSrc: require("../../Images/Didwania.jpg"),
   },
   {
     id: "3",
-    title: "Creative Minds Portfolio",
-    name: "CREATIVE MINDS",
-    category: "PORTFOLIO",
+    title: "Nomad Interiors Web Design",
+    name: "NOMAD",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Nomad.jpg"),
+  },
+  {
+    id: "4",
+    title: "Puba Productions Web Design & Development",
+    name: "PUBA",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Puba.jpg"),
+  },
+  {
+    id: "5",
+    title: "Nomad Interiors Web Design",
+    name: "NOMAD",
+    category: "WEB DESIGN",
     imgSrc: require("../../Images/Nomad.jpg"),
   },
 ];
 
-function OurWorksDetail({ id }) {
+function OurWorksDetail() {
+  const { id } = useParams();
   const work = worksData.find((item) => item.id === id);
 
   if (!work) {
