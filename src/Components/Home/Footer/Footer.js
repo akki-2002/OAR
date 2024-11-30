@@ -3,6 +3,18 @@ import "./Footer.css"; // Add styles in this CSS file
 import copy from "../../../Images/copy (1).png";
 
 const Footer = () => {
+  const handleCopyEmail = () => {
+    const email = "oarstudioz@gmail.com";
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        alert("Email copied to clipboard!");
+      })
+      .catch(() => {
+        alert("Failed to copy email.");
+      });
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-left">
@@ -11,7 +23,7 @@ const Footer = () => {
       <div className="footer-right">
         <div className="footer-right-header">
           <h3>CONTACT US</h3>
-          <div className="copy-email-container">
+          <div className="copy-email-container" onClick={handleCopyEmail}>
             <span className="copy-email">COPY EMAIL</span>
             <img src={copy} alt="Copy icon" />
           </div>

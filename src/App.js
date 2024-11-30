@@ -2,6 +2,7 @@ import './App.css';
 import AboutUs from './Components/Home/About Us/AboutUs';
 import FAQ from './Components/Home/FAQ/FAQ';
 import Footer from './Components/Home/Footer/Footer';
+import FooterMain from './Components/Home/Footer/FooterMain';
 import LatestArticle from './Components/Home/Latest Article/LatestArticle';
 import Navbar from './Components/Home/Navbar/Navbar';
 import OurProjects from './Components/Home/Our Projects/OurProjects';
@@ -20,7 +21,10 @@ function App() {
   <OurProjects/>
   <LatestArticle/>
   <FAQ/>
-  <Footer/>
+  <div className="footer-wrapper">
+      <Footer />
+      <FooterMain />
+    </div>
   
   </>
   );
