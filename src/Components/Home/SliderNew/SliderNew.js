@@ -4,11 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../SliderNew/slidernew.css'
 import work1 from '../../../Images/work1.jpg'
+import acewares from '../../../Videos/AceWears.mp4'
+import didwania from '../../../Videos/Didwania.mp4'
+import holayog from '../../../Videos/HolaYog Video.mp4'
+import nomad from '../../../Videos/Nomad.mp4'
+import puba from '../../../Videos/Puba.mp4'
 
 const SliderNew = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 7, // Number of visible slides
+    slidesToShow: 6, // Number of visible slides
     slidesToScroll: 1, // Scroll one slide at a time
     autoplay: true,
     autoplaySpeed: 0, // Continuous scrolling
@@ -19,20 +24,16 @@ const SliderNew = () => {
   };
 
   const images = [
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
-    work1,
+   acewares,
+   didwania,
+   holayog,
+   nomad,
+   puba,
+   acewares,
+   didwania,
+   holayog,
+   nomad,
+   puba,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -103,7 +104,17 @@ const SliderNew = () => {
         <Slider {...settings} >
       {images.map((image, index) => (
         <div key={index}>
-          <img src={image} alt={`Slide ${index}`} style={{ width: "100%" }} />
+          {/* <img src={image} alt={`Slide ${index}`} style={{ width: "100%" }} /> */}
+          {/* <video src={image} alt={`Slide ${index}`} style={{ width: "100%" }} autoPlay="true"></video> */}
+          <video
+  src={image}
+  alt={`Slide ${index}`}
+  style={{ width: "100%" }}
+  autoPlay
+  muted
+  loop // Add loop if you want the video to repeat
+></video>
+
         </div>
       ))}
     </Slider>

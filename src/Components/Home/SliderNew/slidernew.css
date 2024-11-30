@@ -63,7 +63,7 @@
       justify-content: center;
       background-color: transparent;
       /* overflow: hidden; */
-      margin-top: 10%;
+      margin-top: 15%;
     }
 
     .slick-slider{
@@ -90,7 +90,7 @@
       background-color: transparent;
     }
 
-    .slick-slide img{
+    .slick-slide video{
       object-fit: cover;
       aspect-ratio: 3/4;
     }
@@ -98,6 +98,4 @@
     /* .box:hover {
       transform: rotateX(-30deg) rotateY(-30deg);
     } */
-    
-
     
