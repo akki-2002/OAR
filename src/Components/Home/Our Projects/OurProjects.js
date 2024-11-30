@@ -66,7 +66,7 @@ const OurProjects = () => {
       ))}
     </Slider>
 
-    <div className="shadow shdw"></div>
+    {/* <div className="shadow shdw"></div> */}
       
     </div>
     
