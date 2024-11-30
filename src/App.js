@@ -19,7 +19,7 @@ function App() {
   <AboutUs/>
   <OurWorks/>
   <OurProjects/>
-  <LatestArticle/>
+  {/* <LatestArticle/> */}
   <FAQ/>
   <div className="footer-wrapper">
       <Footer />
