@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Our Projects/OurProjects.css"
 import work1 from '../../../Images/work1.jpg'
+import { Link } from "react-router-dom";
 
 const OurProjects = () => {
   const settings = {
@@ -52,9 +53,9 @@ const OurProjects = () => {
        
         <Slider {...settings} style={{marginBottom: "15px"}}>
       {images.map((image, index) => (
-        <div key={index}>
+        <Link to={`/our-works/1}`} key={index}>
           <img src={image} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
-        </div>
+        </Link>
       ))}
     </Slider>
 

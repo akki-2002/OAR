@@ -1,32 +1,48 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+
+// Components
+import Navbar from './Components/Home/Navbar/Navbar';
+import SliderNew from './Components/Home/SliderNew/SliderNew';
 import AboutUs from './Components/Home/About Us/AboutUs';
 import FAQ from './Components/Home/FAQ/FAQ';
 import Footer from './Components/Home/Footer/Footer';
 import FooterMain from './Components/Home/Footer/FooterMain';
-import LatestArticle from './Components/Home/Latest Article/LatestArticle';
-import Navbar from './Components/Home/Navbar/Navbar';
-import OurProjects from './Components/Home/Our Projects/OurProjects';
 import OurWorks from './Components/Home/Our Works/OurWorks';
-// import Slider from './Components/Home/Slider/Slider';
-import SliderNew from './Components/Home/SliderNew/SliderNew';
+import OurProjects from './Components/Home/Our Projects/OurProjects';
+import LatestArticle from './Components/Home/Latest Article/LatestArticle';
+import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail'; // New page under OurWorks
 
 function App() {
   return (
-  <>
-  <Navbar/>
-  {/* <Slider/> */}
-  <SliderNew/>
-  <AboutUs/>
-  <OurWorks/>
-  <OurProjects/>
-  {/* <LatestArticle/> */}
-  <FAQ/>
-  <div className="footer-wrapper">
-      <Footer />
-      <FooterMain />
-    </div>
-  
-  </>
+    <Router>
+      <Navbar />
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <SliderNew />
+              <AboutUs />
+              <OurWorks />
+              <OurProjects />
+              <FAQ />
+              {/* Uncomment if LatestArticle is needed */}
+              {/* <LatestArticle /> */}
+            </>
+          }
+        />
+
+        {/* Dynamic route for project details */}
+        <Route path="/our-works/:id" element={<OurWorksDetail />} />
+      </Routes>
+      <div className="footer-wrapper">
+        <Footer />
+        <FooterMain />
+      </div>
+    </Router>
   );
 }
 
