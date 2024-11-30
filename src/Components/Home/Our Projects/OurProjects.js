@@ -9,7 +9,7 @@ import pubaLogo from '../../../Images/3.png';
 import didwaniaLogo from '../../../Images/4.png';
 import holaYogLogo from '../../../Images/5.png';
 import aceWearsLogoDark from '../../../Images/8.png';
-import nomadLogoDark from '../../../Images/9.png';
+import nomadLogoDark from '../../../Images/9.png';  
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
@@ -60,36 +60,20 @@ const OurProjects = () => {
         <Slider {...settings} style={{marginBottom: "15px"}}>
       {images.map((image, index) => (
         <Link to={`/our-works/1}`} key={index}>
-          <img src={image} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
+          <img src={image.dark} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
+        </Link>
+      ))}
+    </Slider>
+    <Slider {...settings} {...settings2}>
+
+      {images.map((image, index) => (
+        <Link to={`/our-works/1}`} key={index}>
+          <img src={image.dark} alt={`Slide ${index}`} style={{ width: "100%" }} className="opImg"/>
         </Link>
       ))}
     </Slider>
 
-      <Slider {...settings} style={{ marginBottom: "15px" }}>
-        {images.map((image, index) => (
-          <div key={index} className="image-container">
-            <img
-              src={image.dark}
-              alt={`Slide ${index}`}
-              className="opImg"
-              data-dark={image.dark}
-            />
-          </div>
-        ))}
-      </Slider>
-
-      <Slider {...settings} {...settings2}>
-        {images2.map((image, index) => (
-          <div key={index} className="image-container">
-            <img
-              src={image.dark}
-              alt={`Slide ${index}`}
-              className="opImg"
-              data-dark={image.dark}
-            />
-          </div>
-        ))}
-      </Slider>
+      
     </div>
   );
 };
