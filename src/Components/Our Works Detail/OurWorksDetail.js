@@ -48,6 +48,8 @@ function OurWorksDetail() {
     return <div>Work not found</div>;
   }
 
+  
+
   return (
     <div className="works-container">
       <div className="works-navbar">
