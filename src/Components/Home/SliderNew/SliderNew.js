@@ -11,13 +11,38 @@ import nomad from '../../../Videos/Nomad.mp4'
 import puba from '../../../Videos/Puba.mp4'
 
 const SliderNew = () => {
+
+  const [iw, setIw] = useState(7)
+  const [pers, setPers] = useState()
+
+  useEffect(()=>{
+    if(window.innerWidth < 425)
+      {
+        setIw(2)
+        setPers("rotateX(5deg) rotateY(45deg) rotateZ(4deg)")
+        console.log(pers)
+      } else if(window.innerWidth > 425 && window.innerWidth < 769)
+      {
+        setIw(4)
+        setPers("rotateX(5deg) rotateY(45deg) rotateZ(4deg)")
+      }else if(window.innerWidth > 770 && window.innerWidth < 2560){
+        setIw(7)
+        setPers("rotateX(4deg) rotateY(20deg) rotateZ(5deg)")
+      }else{
+        setIw(8)
+        setPers("rotateX(4deg) rotateY(20deg) rotateZ(5deg)")
+      }
+  },[iw, pers])
+  
+  
+
   const settings = {
     infinite: true,
-    slidesToShow: 6, // Number of visible slides
+    slidesToShow: iw, // Number of visible slides
     slidesToScroll: 1, // Scroll one slide at a time
     autoplay: true,
     autoplaySpeed: 0, // Continuous scrolling
-    speed: 8000, // Adjust the duration for smooth scrolling
+    speed: 6000, // Adjust the duration for smooth scrolling
     cssEase: "linear", // Smooth linear scrolling
     arrows: false, // Hide navigation arrows
     pauseOnHover: false, // Avoid pausing when hovered
@@ -35,6 +60,17 @@ const SliderNew = () => {
    nomad,
    puba,
   ];
+
+  // const images = [
+  //   work1,
+  //   work1,
+  //   work1,
+  //   work1,
+  //   work1,
+  //   work1,
+  //   work1,
+  //   work1,
+  // ]
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ss, setSs] = useState({
@@ -78,7 +114,7 @@ const SliderNew = () => {
             .replace(/translateY\([^)]+\)/, "") // Remove any existing translateY
             .trim(); // Clean up whitespace
 
-        boxRef.current.style.transform = `rotateX(4deg) rotateY(20deg) rotateZ(5deg) translateY(${-offset}px)`; // Add new translateY
+        boxRef.current.style.transform = `${pers} translateY(${-offset}px)`; // Add new translateY
     }
 };
 
@@ -96,8 +132,8 @@ const SliderNew = () => {
   return (
     <>
         <div className="slider-text-container">
-        <h1 className="innovative-designs" style={id}>Innovative Designs</h1>
-        <h2 className="seamless-solutions" style={ss}>SEAMLESS SOLUTIONS</h2>
+        <h1 className="innovative-designs">Innovative Designs</h1>
+        <h2 className="seamless-solutions">SEAMLESS SOLUTIONS</h2>
       </div>
       <div className="container">
         <div className="box"  ref={boxRef}>
@@ -112,8 +148,10 @@ const SliderNew = () => {
   style={{ width: "100%" }}
   autoPlay
   muted
-  loop // Add loop if you want the video to repeat
+  loop 
 ></video>
+
+{/* <img src={image} alt="" style={{ width: "100%" }}/> */}
 
         </div>
       ))}

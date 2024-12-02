@@ -20,9 +20,10 @@
     letter-spacing: -0.06em;
     line-height: 1.1em;
     font-style: italic;
-    position: absolute;
+    position: relative;
     transition: all 0.2s ease-in-out;
     background-color: transparent;
+    animation: id 0.4s ease-in-out;
   }
 
 
@@ -33,12 +34,31 @@
     font-style: normal;
     font-size: 72px;
     color: #FFC940;
-    margin-top: 8px;
+    margin-top: 10px;
     line-height: 1.2em;
-    position: absolute;
+    position: relative;
     transition: 0.2s ease-in-out;
     background-color: transparent;
+    animation: ss 0.4s ease-in-out;
   }
+
+  @keyframes id {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+  @keyframes ss {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
   /* Text Section */
   .slider-text-container {
@@ -99,3 +119,79 @@
       transform: rotateX(-30deg) rotateY(-30deg);
     } */
     
+
+
+    /* media queries  */
+    @media (max-width: 425px)
+    {
+
+      .box{
+        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+      }
+
+      .innovative-designs{
+        font-size: 2.3rem;
+      } 
+      
+      .seamless-solutions{
+        font-size: 2rem;
+        margin-top: 0;
+      }
+
+      .slider-text-container{
+        margin-top: 0;
+        height: 150px;
+      }
+
+      .container{
+        margin-top: -60px;
+        height: 600px;
+        overflow: hidden;
+        /* border: 1px solid white; */
+      }
+
+      .slick-list{
+        height: 60%;
+      } 
+      
+      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
+        height: 100%;
+      }
+    }
+
+    @media (min-width: 425px) and (max-width: 769px) {
+
+      .box{
+        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+        width: 240%;
+      }
+
+      .innovative-designs{
+        font-size: 3.3rem;
+      } 
+      
+      .seamless-solutions{
+        font-size: 3rem;
+        margin-top: 0;
+      }
+
+      .slider-text-container{
+        margin-top: 0;
+
+      }
+
+      .container{
+        margin-top: -60px;
+        height: 600px;
+        /* overflow: hidden; */
+        /* border: 1px solid white; */
+      }
+
+      .slick-list{
+        height: 70%;
+      } 
+      
+      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
+        height: 100%;
+      }
+    }

@@ -14,6 +14,7 @@ import OurProjects from './Components/Home/Our Projects/OurProjects';
 import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail';
 
 function App() {
+  // work on transition trnslate 3d   
   return (
     <Router>
       <Navbar />
@@ -24,13 +25,13 @@ function App() {
           path="/"
           element={
             <>
-             <AboutUs />
-             <OurWorks />
-              {/* <SliderNew />
+              {/* <SliderNew /> */}
               <AboutUs />
               <OurWorks />
-              <OurProjects />
-              <FAQ /> */}
+              {/* <AboutUs />
+              <OurWorks />
+              <OurProjects /> */}
+              {/* <FAQ /> */}
             </>
           }
         />
