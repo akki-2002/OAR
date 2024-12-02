@@ -25,10 +25,10 @@ function App() {
           element={
             <>
               <SliderNew />
-              {/* <AboutUs />
+              <AboutUs />
               <OurWorks />
-              <OurProjects /> */}
-              {/* <FAQ /> */}
+              <OurProjects />
+              <FAQ />
             </>
           }
         />
@@ -37,8 +37,8 @@ function App() {
         <Route path="/our-works/:id" element={<OurWorksDetail />} />
       </Routes>
       <div className="footer-wrapper">
-        {/* <Footer />
-        <FooterMain /> */}
+        <Footer />
+        <FooterMain />
       </div>
     </Router>
   );
