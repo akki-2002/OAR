@@ -17,17 +17,20 @@ function App() {
   return (
     <Router>
       <Navbar />
+      
       <Routes>
         {/* Home Page */}
         <Route
           path="/"
           element={
             <>
-              <SliderNew />
+             <AboutUs />
+             <OurWorks />
+              {/* <SliderNew />
               <AboutUs />
               <OurWorks />
               <OurProjects />
-              <FAQ />
+              <FAQ /> */}
             </>
           }
         />
@@ -36,11 +39,17 @@ function App() {
         <Route path="/our-works/:id" element={<OurWorksDetail />} />
       </Routes>
       <div className="footer-wrapper">
-        <Footer />
-        <FooterMain />
+        {/* <Footer />
+        <FooterMain /> */}
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
+
+
+
+

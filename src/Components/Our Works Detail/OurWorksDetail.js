@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import './OurWorksDetail.css';
 
 const worksData = [
@@ -42,13 +42,18 @@ const worksData = [
 
 function OurWorksDetail() {
   const { id } = useParams();
+  const location = useLocation();
+
   const work = worksData.find((item) => item.id === id);
+
+  useEffect(() => {
+    // Scroll to top whenever location changes
+    window.scrollTo(0, 0);
+  }, [location]);
 
   if (!work) {
     return <div>Work not found</div>;
   }
-
-  
 
   return (
     <div className="works-container">

@@ -51,14 +51,14 @@ const OurProjects = () => {
       <Slider {...settings} style={{ marginBottom: "15px" }}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg" />
+            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg"  loading="lazy" />
           </Link>
         ))}
       </Slider>
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg" />
+            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg"  loading="lazy" />
           </Link>
         ))}
       </Slider>

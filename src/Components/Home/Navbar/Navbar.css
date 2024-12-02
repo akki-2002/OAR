@@ -159,3 +159,110 @@
   }
   
   
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-overlay {
+    width: 100%; /* Adjust the overlay to cover the screen for smaller devices */
+  }
+
+  .menu-links a {
+    font-size: 60px; /* Reduce font size for tablets */
+  }
+
+  .arrow-down {
+    width: 30px; /* Adjust arrow size */
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-overlay {
+    right: -100%; /* Hide the menu by default */
+    display: flex;
+    width: 100%; /* Adjust width for smaller devices */
+  }
+
+  .menu-overlay.open {
+    right: 0; /* Slide-in effect for smaller screens */
+  }
+
+  .menu-links a {
+    font-size: 50px; /* Further reduce font size for mobile */
+    line-height: 1.2em; /* Adjust line height for readability */
+  }
+
+   .menu-links a:hover {
+   
+    font-size: 80px;
+ 
+    
+  }
+
+  .menu-links li {
+    margin: 0px 0; /* Reduce spacing between menu items */
+  }
+
+  .arrow-down {
+    width: 40px; /* Adjust arrow size */
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 16px; /* Reduce padding for smaller devices */
+  }
+
+  .hamburger img {
+    width: 64px; /* Resize the hamburger icon */
+    height: 30px;
+  }
+
+  .navbar-logo .logo-bold {
+    font-size: 28px; /* Adjust logo font size */
+  }
+
+  .navbar-logo .studios {
+    font-size: 24px; /* Adjust subtitle font size */
+  }
+
+  .menu-links a {
+    font-size: 42px; /* Further reduce font size for small screens */
+  }
+
+  .menu-links a:hover {
+   
+    font-size: 56px;
+ 
+    
+  }
+
+  .arrow-down {
+    width: 30px; /* Adjust arrow size */
+    height: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
