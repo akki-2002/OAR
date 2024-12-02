@@ -9,20 +9,21 @@ import pubaLogo from '../../../Images/3.png';
 import didwaniaLogo from '../../../Images/4.png';
 import holaYogLogo from '../../../Images/5.png';
 import aceWearsLogoDark from '../../../Images/8.png';
-import nomadLogoDark from '../../../Images/9.png';  
+import nomadLogoDark from '../../../Images/9.png';
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
 import { Link } from "react-router-dom";
 
 const OurProjects = () => {
-  const [sts, setSts] = useState(3)
-  useEffect(()=>{
-    if(window.innerWidth < 768)
-    {
-      setSts(2)
+  const [sts, setSts] = useState(3);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setSts(2);
     }
-  },[])
+  }, []);
+
   const settings = {
     infinite: true,
     slidesToShow: sts,
@@ -44,7 +45,6 @@ const OurProjects = () => {
     { id: "2", light: didwaniaLogo, dark: didwaniaLogoDark },
     { id: "3", light: nomadLogo, dark: nomadLogoDark },
     { id: "4", light: pubaLogo, dark: pubaLogoDark },
-    
     { id: "5", light: holaYogLogo, dark: holaYogLogoDark },
   ];
 
@@ -54,18 +54,49 @@ const OurProjects = () => {
         <h2>Our Work</h2>
       </div>
       <div className="shadow"></div>
-       
+
       <Slider {...settings} style={{ marginBottom: "15px" }}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg"  loading="lazy" />
+            {/* <div className="opImgWrapper"> */}
+              <img
+                src={image.dark}
+                alt={`Slide ${image.id}`}
+                className="opImg dark"
+              />
+              <img
+                src={image.light}
+                alt={`Slide ${image.id}`}
+                className="opImg light"
+              />
+              <div className="view">
+                <button>VIEW</button>
+              </div>
+              {/* <div className="fadeBox"></div> */}
+            {/* </div> */}
           </Link>
         ))}
       </Slider>
+
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg"  loading="lazy" />
+            {/* <div className="opImgWrapper"> */}
+              <img
+                src={image.dark}
+                alt={`Slide ${image.id}`}
+                className="opImg dark"
+              />
+              <img
+                src={image.light}
+                alt={`Slide ${image.id}`}
+                className="opImg light"
+              />
+              <div className="view">
+                <button>VIEW</button>
+              </div>
+              {/* <div className="fadeBox"></div> */}
+            {/* </div> */}
           </Link>
         ))}
       </Slider>
