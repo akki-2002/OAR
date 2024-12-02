@@ -25,10 +25,10 @@ function App() {
           path="/"
           element={
             <>
-              {/* <SliderNew /> */}
-              <AboutUs />
-              <OurWorks />
-              {/* <OurProjects /> */}
+              <SliderNew />
+              {/* <AboutUs />
+              <OurWorks /> */}
+              <OurProjects />
               <FAQ />
             </>
           }
@@ -38,8 +38,8 @@ function App() {
         <Route path="/our-works/:id" element={<OurWorksDetail />} />
       </Routes>
       <div className="footer-wrapper">
-        <Footer />
-        <FooterMain />
+        {/* <Footer />
+        <FooterMain /> */}
       </div>
     </Router>
   );
