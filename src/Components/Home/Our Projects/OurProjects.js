@@ -58,22 +58,7 @@ const OurProjects = () => {
       <Slider {...settings} style={{ marginBottom: "15px" }}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            {/* <div className="opImgWrapper"> */}
-              <img
-                src={image.dark}
-                alt={`Slide ${image.id}`}
-                className="opImg dark"
-              />
-              <img
-                src={image.light}
-                alt={`Slide ${image.id}`}
-                className="opImg light"
-              />
-              <div className="view">
-              <button>VIEW</button>
-              </div>
-              <div className="fadeBox"></div>
-            {/* </div> */}
+            <img src={image.dark} alt={`Slide ${image.id}`} style={{ width: "100%" }} className="opImg" />
           </Link>
         ))}
       </Slider>

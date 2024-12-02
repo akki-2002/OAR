@@ -18,6 +18,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      
       <Routes>
         {/* Home Page */}
         <Route
@@ -45,3 +46,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
