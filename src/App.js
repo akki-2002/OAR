@@ -25,10 +25,10 @@ function App() {
           path="/"
           element={
             <>
-              <SliderNew />
+              {/* <SliderNew /> */}
               <AboutUs />
               <OurWorks />
-              <OurProjects />
+              {/* <OurProjects /> */}
               <FAQ />
             </>
           }

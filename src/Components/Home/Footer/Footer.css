@@ -1,32 +1,17 @@
 .footer-container {
   display: flex;
-  width: 100%; /* Ensure full width */
+  flex-direction: row; /* Default to row layout */
 
+  width: 100%; /* Ensure full width */
 }
 
 .footer-left {
-  width: 25%;
+  width: 25%; /* Default width for larger screens */
   padding: 6rem 3rem;
-  border-right:  1px solid rgb(40, 40, 40);
-}
-
-.footer-left h2 {
-  font-size: 102px;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  color: #edeae4;
-  line-height: 0.8em;
-  background: linear-gradient(
-    102deg,
-    rgb(255, 255, 255) 0%,
-    rgba(0, 0, 0, 0) 119%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-right: 1px solid rgb(40, 40, 40);
 }
 
 .footer-right {
-
   width: 75%; /* Takes up the remaining width */
   padding: 3rem 5rem;
   display: flex;
@@ -45,6 +30,17 @@
   display: flex;
   align-items: center; /* Vertically align text and icon */
   gap: 8px; /* Add space between the text and the icon */
+}
+
+.footer-left h2 {
+  font-size: 102px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: #edeae4;
+  line-height: 0.8em;
+  background: linear-gradient(102deg, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0) 119%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-right h3 {
@@ -66,7 +62,6 @@
 
 .copy-email-container img {
   width: 22px; /* Adjust size of the icon */
-  /* height: auto; */
 }
 
 .email {
@@ -76,7 +71,7 @@
   color: #edeae4;
 }
 
-.email:hover{
+.email:hover {
   color: rgb(255, 201, 64);
   cursor: pointer;
 }
@@ -87,7 +82,7 @@ form {
 
 .form-row {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   gap: 20px; /* Add space between the fields */
 }
 
@@ -97,10 +92,10 @@ form {
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
-  color: #EDEAE4;
+  color: #edeae4;
 }
 
-.services-checkboxes{
+.services-checkboxes {
   margin: 1.5rem 0rem 2.5rem 0rem;
   display: flex;
   align-items: center;
@@ -109,7 +104,6 @@ form {
 .services-checkboxes label {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-family: "Montserrat", sans-serif;
   margin-right: 20px;
   font-size: 20px;
@@ -118,14 +112,10 @@ form {
 }
 
 input[type="checkbox"] {
-  font-family: "Inter", sans-serif;
   margin-right: 20px;
-  font-size: 20px;
-  font-weight: 100;
-  color: #edeae4;
   width: 25px;
   height: 25px;
-  border: 2px solid rgb(40,40,40); /* Box border */
+  border: 2px solid rgb(40, 40, 40);
 }
 
 .services-heading {
@@ -138,19 +128,19 @@ input[type="checkbox"] {
 input[type="text"],
 input[type="email"] {
   border: none;
-  border-bottom:  1px solid rgb(40, 40, 40);
+  border-bottom: 1px solid rgb(40, 40, 40);
   background-color: transparent;
   padding: 8px;
   font-size: 16px;
-  color: #EDEAE4;
+  color: #edeae4;
   font-family: "Montserrat", sans-serif;
-  outline: none; /* Remove blue outline on focus */
+  outline: none;
   margin-bottom: 3rem;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus {
-  border-bottom: 2px solid #EDEAE4; /* Change border color on focus */
+  border-bottom: 2px solid #edeae4;
 }
 
 textarea {
@@ -158,23 +148,92 @@ textarea {
   border-bottom: 1px solid rgb(40, 40, 40);
   background-color: transparent;
   width: 100%;
-  resize: none; /* Disable resizing */
-  color: #EDEAE4;
+  resize: none;
+  color: #edeae4;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   padding: 8px;
-  outline: none; /* Remove blue outline on focus */
+  outline: none;
   margin-top: 2rem;
 }
 
 textarea:focus {
-  border-bottom: 2px solid #EDEAE4; /* Change bottom border color on focus */
+  border-bottom: 2px solid #edeae4;
 }
 
-.msgg{
+.msgg {
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   margin-top: 1rem;
-  color: #EDEAE4;
+  color: #edeae4;
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px){
+  .footer-left h2{
+    font-size: 85px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: wrap;
+  }
+
+  .services-checkboxes {
+    margin: 1.5rem 0rem 2.5rem 0rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    
+  }
+
+  .services-checkboxes label{
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%; /* Make each section take full width */
+    padding: 0px;
+    border-right: none; /* Remove border for smaller screens */
+  }
+
+  .footer-left h2 {
+    font-size: 60px; /* Adjust font size for smaller screens */
+    padding: 2.5rem 2rem;
+  }
+
+  .footer-right-header{
+    padding: 2rem;
+  }
+
+  .footer-right h3 {
+    font-size: 20px; /* Adjust font sizes */
+  }
+
+  .email{
+    font-size: 26px;
+    padding: 2rem;
+  }
+
+  .copy-email{
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: 2rem; /* Adjust spacing for inputs */
+  }
+
+
+  .msgg{
+    display: block;
+    width: 95%;
+  }
+
+  form{
+    padding: 2rem;
+  }
+}

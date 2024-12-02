@@ -168,6 +168,7 @@
     .heading h2,
     .heading span {
         text-align: left; /* Center-align for smaller screens */
+        font-size: 26px;
     }
 
     .work-grid {
