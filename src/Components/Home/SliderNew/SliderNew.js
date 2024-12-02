@@ -10,62 +10,73 @@ import nomad from "../../../Videos/Nomad.mp4";
 import puba from "../../../Videos/Puba.mp4";
 
 const SliderNew = () => {
-  const [iw, setIw] = useState(7);
-  const [pers, setPers] = useState("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
-  const persRef = useRef(pers);
+  const [slidesToShow, setSlidesToShow] = useState(7);
+  const [perspective, setPerspective] = useState(
+    "rotateX(4deg) rotateY(20deg) rotateZ(5deg)"
+  );
   const boxRef = useRef(null);
 
+  // Handle responsive settings for the slider
   useEffect(() => {
-    if (window.innerWidth < 425) {
-      setIw(2);
-      setPers("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-    } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
-      setIw(4);
-      setPers("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-    } else {
-      setIw(8);
-      setPers("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
-    }
-  }, []);
+    const updateSettings = () => {
+      if (window.innerWidth < 425) {
+        setSlidesToShow(2);
+        setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+      } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
+        setSlidesToShow(4);
+        setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+      } else {
+        setSlidesToShow(8);
+        setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
+      }
+    };
 
-  useEffect(() => {
-    persRef.current = pers; // Keep the `pers` value updated in the ref
-  }, [pers]);
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY; // Get the vertical scroll position
-    const offset = scrollY / 2; // Adjust the divisor to control movement intensity
-
-    if (boxRef.current) {
-      boxRef.current.style.transform = `${persRef.current} translateY(${-offset}px)`; // Combine `pers` with the scroll effect
-    }
-  };
-
-  // Debounce for scroll event
-  let timeout;
-  const debounceScroll = () => {
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(() => handleScroll(), 10); // Adjust delay for smooth updates
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", debounceScroll);
+    updateSettings();
+    window.addEventListener("resize", updateSettings);
 
     return () => {
-      window.removeEventListener("scroll", debounceScroll);
+      window.removeEventListener("resize", updateSettings);
     };
   }, []);
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const offset = scrollY / 2;
+
+      if (boxRef.current) {
+        boxRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
+      }
+    };
+
+    const debounceScroll = () => {
+      let timeout;
+      return () => {
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(() => handleScroll(), 50);
+      };
+    };
+
+    const debouncedScroll = debounceScroll();
+    window.addEventListener("scroll", debouncedScroll);
+
+    return () => {
+      window.removeEventListener("scroll", debouncedScroll);
+    };
+  }, [perspective]);
+
+  // Slider settings
   const settings = {
     infinite: true,
-    slidesToShow: iw, // Number of visible slides
-    slidesToScroll: 1, // Scroll one slide at a time
+    slidesToShow, // Use state for real-time updates
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0, // Continuous scrolling
-    speed: 6000, // Adjust the duration for smooth scrolling
-    cssEase: "linear", // Smooth linear scrolling
-    arrows: false, // Hide navigation arrows
-    pauseOnHover: false, // Avoid pausing when hovered
+    autoplaySpeed: 0,
+    speed: 6000,
+    cssEase: "linear",
+    arrows: false,
+    pauseOnHover: false,
   };
 
   const images = [acewares, didwania, holayog, nomad, puba];
@@ -83,7 +94,6 @@ const SliderNew = () => {
               <div key={index}>
                 <video
                   src={image}
-                  alt={`Slide ${index}`}
                   style={{ width: "100%" }}
                   autoPlay
                   muted

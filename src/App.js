@@ -26,8 +26,8 @@ function App() {
           element={
             <>
               <SliderNew />
-              {/* <AboutUs />
-              <OurWorks /> */}
+              <AboutUs />
+              <OurWorks />
               <OurProjects />
               <FAQ />
             </>
