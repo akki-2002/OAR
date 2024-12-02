@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,9 +16,16 @@ import holaYogLogoDark from '../../../Images/12.png';
 import { Link } from "react-router-dom";
 
 const OurProjects = () => {
+  const [sts, setSts] = useState(3)
+  useEffect(()=>{
+    if(window.innerWidth < 768)
+    {
+      setSts(2)
+    }
+  },[])
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: sts,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
