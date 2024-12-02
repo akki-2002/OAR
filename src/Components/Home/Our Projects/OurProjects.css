@@ -136,6 +136,8 @@
     position: absolute;
     transition: 0.5s ease-in-out;
     /* transition-delay: 0.5s; */
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -157,7 +159,6 @@
     /* transform: translate(100%, 100%); */
 }
 .op .slick-slide:hover .light{
-    opacity: 1;
     opacity: 1;
 }
 .op .slick-slide:hover .view{
@@ -182,3 +183,4 @@
     background-color: rgba(0, 0, 0, 0.649);
 }
 
+*/  
