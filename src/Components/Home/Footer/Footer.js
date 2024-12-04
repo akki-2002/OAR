@@ -98,6 +98,8 @@ const Footer = () => {
             <textarea name="message"></textarea>
           </label>
 
+
+        <div className="submit-container">
           <button
             type="submit"
             className="submit-btn-footer"
@@ -105,6 +107,7 @@ const Footer = () => {
           >
             {buttonText}
           </button>
+          </div>
         </form>
 
         {formStatus && <p className="form-status">{formStatus}</p>}

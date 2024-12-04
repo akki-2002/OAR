@@ -168,6 +168,13 @@ textarea:focus {
   color: #edeae4;
 }
 
+.submit-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  margin-top: 2rem; /* Add space between form fields and button */
+}
+
+
 .submit-btn-footer {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
@@ -229,12 +236,12 @@ textarea:focus {
   }
 
   .footer-left h2 {
-    font-size: 60px; /* Adjust font size for smaller screens */
+    font-size: 55px; /* Adjust font size for smaller screens */
     padding: 2.5rem 2rem;
   }
 
   .footer-right-header{
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
 
   .footer-right h3 {
@@ -243,12 +250,16 @@ textarea:focus {
 
   .email{
     font-size: 26px;
-    padding: 2rem;
+    padding: 0rem 2rem;
   }
 
   .copy-email{
-    font-size: 20px;
+    font-size: 15px;
   }
+
+  .copy-email-container img {
+    width: 16px;
+}
 
   input[type="text"],
   input[type="email"],
@@ -264,5 +275,24 @@ textarea:focus {
 
   form{
     padding: 2rem;
+  }
+
+  .submit-btn-footer {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    padding: 0.8rem 1.5rem; /* Adjust padding for better fit */
+    border-radius: 10px; /* Slightly smaller radius */
+    margin-top: 1rem; /* Ensure spacing from other elements */
+    align-self: center; /* Center the button within the form */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .submit-btn-footer {
+    font-size: 20px; /* Further reduce font size for very small screens */
+ 
+    border-radius: 8px; /* Smaller border radius */
+    margin-top: 1rem; /* Ensure spacing from other elements */
+    align-self: center; /* Center the button within the form */
   }
 }

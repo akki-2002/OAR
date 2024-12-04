@@ -12,6 +12,18 @@ function OurWorks() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768; // Define mobile threshold
+    if (isMobile) {
+      // Immediately set styles for mobile devices
+      setStyles([
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+      ]);
+      return; // Skip IntersectionObserver for mobile
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
