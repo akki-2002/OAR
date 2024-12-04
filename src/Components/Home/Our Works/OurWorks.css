@@ -189,6 +189,6 @@
     }
 
     .work-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items */
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); /* Smaller grid items */
     }
 }
