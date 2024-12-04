@@ -2,7 +2,7 @@
     border: none;
     border-top: 1px solid #4d4d4d;
     border-bottom: 1px solid #4d4d4d;
-    padding: 100px 0;
+    padding: 70px 0;
     position: relative;
 }
 
@@ -110,7 +110,7 @@
 
 .view button{
     color: #FFC940;
-    /* border: 1px solid #FFC940; */
+    
     border: none;
     background-color: transparent;
     padding: 8px 20px;
@@ -185,3 +185,46 @@
 }
 
 */  
+
+
+
+
+
+.view button {
+    color: #FFC940;
+    border: none;
+    background-color: #0d0d0d97; /* Semi-transparent background */
+    padding: 8px 20px; /* Adjust padding for general responsiveness */
+    border-radius: 50px;
+    font-family: 'Agdasima', sans-serif;
+    margin-bottom: 40px;
+    font-size: clamp(1rem, 1.2vw, 1.2rem); /* Dynamic font size based on viewport */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.view button:hover {
+    background-color: #ffc940; /* Highlight on hover */
+    color: #0d0d0d; /* Contrast text color */
+    transform: scale(1.05); /* Slight scale-up for hover feedback */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .view button {
+        padding: 6px 16px; /* Reduce padding for smaller screens */
+        font-size: clamp(0.9rem, 1.5vw, 1rem); /* Slightly smaller font */
+        margin-bottom: 30px; /* Reduce margin-bottom */
+    }
+}
+
+/* Further adjustments for very small screens (mobile) */
+@media (max-width: 480px) {
+    .view button {
+        padding: 4px 12px; /* Compact padding for mobile */
+        font-size: 0.8rem; /* Smaller font size */
+        margin-bottom: 20px; /* Smaller margin */
+    }
+}
