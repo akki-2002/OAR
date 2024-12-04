@@ -168,6 +168,35 @@ textarea:focus {
   color: #edeae4;
 }
 
+.submit-btn-footer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 201, 64, 0.37);
+  background: linear-gradient(14deg, rgb(255, 201, 64) 0%, rgba(0, 0, 0, 0.22) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback if gradient isn't supported */
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  background-clip: text;
+  text-fill-color: transparent; /* Extra layer for better compatibility */
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.submit-btn-footer:hover {
+  background: none; /* Remove gradient on hover */
+  -webkit-background-clip: border-box; /* Reset background clip */
+  -webkit-text-fill-color: rgb(255, 201, 64); /* Solid color on hover */
+  color: rgb(255, 201, 64); /* Fallback for non-webkit browsers */
+  border: 1px solid rgba(255, 201, 64);
+}
+
+
+
 /* Responsive Styles */
 @media (max-width: 1024px){
   .footer-left h2{

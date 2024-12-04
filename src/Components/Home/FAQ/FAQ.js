@@ -15,23 +15,23 @@ const FAQ = () => {
     },
     {
       question: "How do you manage projects?",
-      answer: "Our project management process involves clear communication, regular updates, and collaborative tools to ensure your satisfaction.",
+      answer: "We follow a structured project management approach, typically using Agile methodologies. This ensures regular communication, iterative progress, and flexibility to adapt to changes.",
     },
     {
       question: "How long does it take to complete a project?",
-      answer: "The timeline varies depending on the scope and complexity of the project. We’ll provide an estimated timeframe during the consultation phase.",
+      answer: "The duration of a project depends on its complexity and scope. We provide an estimated timeline after understanding your requirements during the initial consultation.",
     },
     {
       question: "How much do your services cost?",
-      answer: "Pricing depends on the specific services you require. Contact us for a customized quote tailored to your needs.",
+      answer: "The cost varies depending on the project scope, complexity, and specific requirements. We provide a detailed quote after the initial consultation and needs assessment.",
     },
     {
       question: "Can you redesign my existing website/application?",
-      answer: "Yes, we specialize in redesigning and enhancing existing websites and applications to meet modern standards.",
+      answer: "Certainly. We can revamp your existing website or application to improve its design, usability, and performance, ensuring it meets current industry standards and user expectations.",
     },
     {
       question: "Do you offer support and maintenance services?",
-      answer: "Absolutely! We provide ongoing support and maintenance services to ensure your project runs smoothly post-launch.",
+      answer: "Yes, we offer ongoing support and maintenance to ensure your systems remain up-to-date, secure, and efficient. This includes bug fixes, updates, and performance optimizations.",
     },
   ];
 
