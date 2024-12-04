@@ -296,3 +296,21 @@ textarea:focus {
     align-self: center; /* Center the button within the form */
   }
 }
+
+
+
+.form-status {
+  color: #edeae4; /* Set the text color to white */
+  font-size: 18px; /* Optional: adjust size */
+  margin-top: 10px; /* Optional: add some spacing */
+  font-family: "Montserrat", sans-serif;
+
+ 
+ 
+ 
+    padding: 5px 10px; /* Optional: padding for spacing */
+    border-radius: 4px; /* Optional: rounded corners */
+    text-align: center;
+ 
+  
+}
