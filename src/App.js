@@ -13,11 +13,13 @@ import OurWorks from './Components/Home/Our Works/OurWorks';
 import OurProjects from './Components/Home/Our Projects/OurProjects';
 import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail';
 
+
 function App() {
   // work on transition trnslate 3d   
   return (
     <Router>
-      <Navbar />
+
+      {/* <Navbar /> */}
       
       <Routes>
         {/* Home Page */}
@@ -25,11 +27,11 @@ function App() {
           path="/"
           element={
             <>
-              <SliderNew />
-              {/* <AboutUs />
-              <OurWorks /> */}
-              <OurProjects />
-              <FAQ />
+              {/* <SliderNew /> */}
+              {/* <AboutUs /> */}
+              {/* <OurWorks /> */}
+              {/* <OurProjects /> */}
+              {/* <FAQ /> */}
             </>
           }
         />
@@ -38,8 +40,8 @@ function App() {
         <Route path="/our-works/:id" element={<OurWorksDetail />} />
       </Routes>
       <div className="footer-wrapper">
-        {/* <Footer />
-        <FooterMain /> */}
+         {/* <Footer /> */}
+        {/* <FooterMain /> */}
       </div>
     </Router>
   );
