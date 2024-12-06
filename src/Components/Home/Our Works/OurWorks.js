@@ -12,6 +12,18 @@ function OurWorks() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768; // Define mobile threshold
+    if (isMobile) {
+      // Immediately set styles for mobile devices
+      setStyles([
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(0)', opacity: 1 },
+      ]);
+      return; // Skip IntersectionObserver for mobile
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -57,25 +69,25 @@ function OurWorks() {
         <div className="work-item design" style={styles[3]}>
           <div className="overlay">
             <h3>DESIGN</h3>
-            <p>Creating visually appealing and functional designs that capture your brand's essence.</p>
+            <p>Web Design, App Design, UI/UX, Design System, Logo Design, Graphic Design, Social Media Design, and much more.</p>
           </div>
         </div>
         <div className="work-item development" style={styles[2]}>
           <div className="overlay">
             <h3>DEVELOPMENT</h3>
-            <p>Building innovative, high-performance digital solutions tailored to your needs.</p>
+            <p>Website Development, App Developoment, WordPress Development, Backend, Deployment, AI/ML Integration, and much more.</p>
           </div>
         </div>
         <div className="work-item branding" style={styles[1]}>
           <div className="overlay">
             <h3>BRANDING</h3>
-            <p>Developing a consistent brand identity that speaks volumes and stands out.</p>
+            <p>Building brands that resonate, we weave stories and visuals into powerful identities that leave a lasting impression.</p>
           </div>
         </div>
         <div className="work-item digital-marketing" style={styles[0]}>
           <div className="overlay">
             <h3>DIGITAL MARKETING</h3>
-            <p>Expanding your brand's reach through strategic and impactful marketing campaigns.</p>
+            <p>Amplify your online presence with our strategic digital marketing campaigns that drive growth and connect with your audience.</p>
           </div>
         </div>
       </div>

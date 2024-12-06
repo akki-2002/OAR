@@ -6,10 +6,15 @@
   padding: 8px 28px;
   position: relative;
   z-index: 1;
+  border-bottom: 1px solid #4d4d4d;
 }
 
 .menu-overlay nav {
   width: 80%;
+}
+
+.navbar-logo{
+  text-decoration: none;
 }
 
 .navbar-logo .logo-bold {
@@ -18,6 +23,7 @@
   font-style: normal;
   font-size: 36px;
   color: #ffc940;
+  text-decoration: none;
 }
 
 .navbar-logo .studios {
@@ -26,6 +32,7 @@
   font-style: italic;
   color: #ffffff;
   font-size: 32px;
+  text-decoration: none;
 }
 
 .hamburger {
@@ -130,7 +137,7 @@
 }
 
 /* Line below Navbar */
-.navbar::after {
+/* .navbar::after {
   margin-top: 80px;
   content: "";
   display: block;
@@ -138,9 +145,9 @@
   height: 0.8px;
   background-color: #4d4d4d;
   position: absolute;
-  /* bottom: 0; */
+ 
   left: 0;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -235,4 +242,44 @@
   }
 
   
+}
+
+
+@media (max-width: 768px) {
+  /* Apply the hover styles to the first list item (HOME) by default on mobile */
+  .menu-links li:first-child a {
+    color: #141414; /* Text color */
+    font-size: 60px; /* Same as hover state */
+    background-color: #ffc940; /* Yellow background */
+    padding: 0; /* Adjust padding */
+  }
+
+  .menu-links li:first-child::after {
+    width: 100%; /* Full width background */
+    background-color: #ffc940;
+  }
+
+  /* Ensure the arrow for HOME is always visible and not rotated */
+  .menu-links li:first-child .arrow-down {
+    opacity: 1; /* Fully visible */
+    transform: rotateZ(0deg); /* No rotation */
+  }
+
+  /* Regular hover styles for other items */
+  .menu-links li:not(:first-child):hover a {
+    color: #141414;
+    font-size: 100px;
+    padding: 0;
+  }
+
+  .menu-links li:not(:first-child):hover::after {
+    width: 100%;
+    background-color: #ffc940;
+  }
+
+  .menu-links li:not(:first-child):hover .arrow-down {
+    opacity: 1;
+    transform: rotateZ(0deg);
+    transition-delay: 0.3s;
+  }
 }
