@@ -25,7 +25,7 @@ const Footer = () => {
     setButtonText("Submitting...");
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbw_oisn4vLKgmgVz0GI9Np7sZFmHKAfMEOPrjd1nRZRxu3qtwD0MAHmchDtMHZh5KWT/exec";
+      "https://script.google.com/macros/s/AKfycbxaDN1GibLCapyBZnTzFNttzNqR1Oeo8LgGkc8nTNxeGF82aG-1x5NjjTjz7ERgNvvj/exec";
     const formData = new FormData(e.target);
 
     fetch(scriptURL, { method: "POST", body: formData })

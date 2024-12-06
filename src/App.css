@@ -47,4 +47,13 @@ input[type="checkbox"]:checked::before {
   border-top: 1px solid rgb(40, 40, 40); /* Ensure consistent border */
 }
 
+.scroll-container {
+  overflow-y: auto; /* Allows vertical scrolling */
+  height: 100vh; /* Adjust height as needed */
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for WebKit-based browsers */
+}
 

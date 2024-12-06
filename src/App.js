@@ -15,6 +15,8 @@ import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail';
 
 function App() {
   return (
+
+    <div className="scroll-container">
     <Router>
   <Navbar />
   <Routes>
@@ -52,6 +54,7 @@ function App() {
     <FooterMain />
   </div>
 </Router>
+</div>
 
   );
 }
