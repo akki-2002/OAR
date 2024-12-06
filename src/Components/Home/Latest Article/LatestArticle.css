@@ -99,7 +99,7 @@
 .slick-next::before {
   font-size: 30px; /* Reduce icon size */
   opacity: 1;
-  margin-left: -4rem;
+  margin-left: -5rem;
 }
 
 /* Adjust the spacing and layout for smaller screens */
