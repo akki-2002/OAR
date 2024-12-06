@@ -35,6 +35,7 @@
   flex-direction: column;
   margin: 0 10px; /* Add margin for spacing on smaller screens */
   cursor: pointer;
+  height: 35rem;
 }
 
 .article-image {
@@ -177,3 +178,8 @@
     width: 100%; /* Full-width on the smallest screens */
   }
 }
+
+.latest-article .slick-track, .slick-slide, .slick-slide div, .slick-slide video {
+  /* height: 100%; */
+}
+
