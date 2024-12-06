@@ -93,7 +93,7 @@ const SliderNew = () => {
             {images.map((image, index) => (
               <div key={index}>
                 <video
-                  src={image}
+                  src={image} 
                   style={{ width: "100%" }}
                   autoPlay
                   muted
