@@ -156,6 +156,7 @@
       
       .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
         height: 100%;
+        margin-left: 0.1rem;
       }
     }
 
@@ -193,6 +194,7 @@
       
       .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
         height: 100%;
+        margin-left: 0.1rem;
       }
     }
 

@@ -51,11 +51,13 @@ const Navbar = () => {
   <nav>
     <ul className="menu-links">
       <li><a href="/" onClick={closeMenu}>HOME <img src={ArrowDownIcon} className="home-spe arrow-down" alt="arrow" /></a></li>
-      <li><a href="#work" onClick={closeMenu}>WORK <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
+    
       <li><a href="#about" onClick={closeMenu}>ABOUT <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
       <li><a href="#services" onClick={closeMenu}>SERVICES <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
-      <li><a href="#contact" onClick={closeMenu}>CONTACT <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
+      <li><a href="#work" onClick={closeMenu}>WORK <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
+     <li> <a href="#blogs" onClick={closeMenu}>BLOGS <img src={ArrowDownIcon} className="arrow-down" alt="arrow"/></a> </li>
       <li><a href="#faq" onClick={closeMenu}>FAQ <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
+      <li><a href="#contact" onClick={closeMenu}>CONTACT <img src={ArrowDownIcon} className="arrow-down" alt="arrow" /></a></li>
     </ul>
   </nav>
 </div>

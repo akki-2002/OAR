@@ -1,17 +1,13 @@
-/* Slick Slider CSS */
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
 .latest-article {
-  padding: 5rem 0.6rem 5rem 5rem;
-
+  padding: 4rem 0.3rem 4rem 4rem; /* Adjust padding for smaller screens */
   color: white;
   font-family: "Arial", sans-serif;
+  
 }
 
 .latest-article-title h2 {
-  font-size: 49px;
-  text-align: left;
+  font-size: 49px; /* Reduce font size for smaller screens */
+  text-align: left; /* Center the title for mobile */
   background: linear-gradient(
     70deg,
     rgb(255, 255, 255) -21%,
@@ -19,10 +15,10 @@
   );
   -webkit-background-clip: text; /* For Safari/Chrome */
   background-clip: text; /* Standard property */
-  color: transparent; /* Make the text transparent so the background shows through */
+  color: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Adjust spacing for smaller screens */
 }
 
 .articles-grid {
@@ -32,22 +28,23 @@
 }
 
 .article-card {
-  border: 2px solid rgb(77, 77, 77); /* Border applied here */
-  border-radius: 20px; /* Radius applies to entire card */
-  overflow: hidden; /* Ensures content stays inside the rounded corners */
+  border: 2px solid rgb(77, 77, 77);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin: 0 10px; /* Add margin for spacing on smaller screens */
+  cursor: pointer;
 }
 
 .article-image {
   width: 100%;
-  height: 25rem;
+  height: 24rem; /* Adjust height for mobile */
   object-fit: cover;
-  border-radius: 0px 0px 20px 20px;
 }
 
 .article-content {
-  padding: 3rem 1rem;
+  padding: 1.5rem; /* Reduce padding for smaller screens */
   display: flex;
   flex-direction: column;
 }
@@ -55,18 +52,16 @@
 .article-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.8rem; /* Adjust font size */
+  margin-bottom: 1rem;
   color: #b0b0b0;
 }
 
 .category {
   background-color: rgb(229, 170, 242);
   border-radius: 6px;
-  opacity: 1;
-  padding: 0.2rem 1rem;
-  border-radius: 5px;
-  font-size: 12px;
+  padding: 0.2rem 0.8rem;
+  font-size: 12px; /* Reduce font size */
   font-weight: 600;
   color: rgb(20, 20, 20);
   font-family: "Montserrat", sans-serif;
@@ -75,74 +70,110 @@
 .time {
   color: rgb(77, 77, 77);
   font-weight: 500;
+  font-size: 16px; /* Reduce font size */
   font-family: "Montserrat", sans-serif;
 }
 
 .article-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 24px; /* Reduce font size */
   text-align: left;
-  color: var(--extracted-2gxw0f, rgb(237, 237, 237));
+  color: rgb(237, 237, 237);
 }
 
-
-.article-card {
-  border: 2px solid rgb(77, 77, 77); /* Border applied here */
-  border-radius: 20px; /* Radius applies to the entire card */
-  overflow: hidden; /* Ensures content stays inside the rounded corners */
-  display: flex;
-  flex-direction: column;
+.slick-prev:before {
+  content: '';
 }
 
-.slick-track{
-    display: flex;
-    gap: 20px;
-}
-
-/* Position arrow navigation inside */
+/* Adjust slider controls for mobile */
 .slick-prev,
 .slick-next {
-  z-index: 10; /* Ensure arrows are above other elements */
-
-  border-radius: 50%; /* Make them circular */
-  height: 40px;
-  width: 40px;
-
+  z-index: 10;
+  border-radius: 50%;
+  height: 30px; /* Adjust size */
+  width: 30px;
 }
 
-/* Customize the left arrow */
-.slick-prev::before {
-  left: 5px; /* Position inside the container */
-  display: none;
+.slick-prev::before,
+.slick-next::before {
+  font-size: 30px; /* Reduce icon size */
+  opacity: 1;
+  margin-left: -4rem;
 }
 
-/* Customize the right arrow */
-.slick-next {
-  right: 5px; /* Position inside the container */
-}
-
-.slick-next:before {
-  display: block;
-  font-family: "slick";
-  font-size: 40px;
-  line-height: 1;
-  opacity: 0.75;
-
-}
-
-/* Ensure the cards have some spacing in smaller screens */
+/* Adjust the spacing and layout for smaller screens */
 @media (max-width: 768px) {
+  .latest-article {
+    padding: 3rem 1rem;
+  }
+
+  .latest-article-title h2 {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+
   .article-card {
-    margin: 0 5px; /* Adjust spacing for smaller screens */
+    margin: 0 5px;
+  }
+
+  .article-image {
+    height: 15rem; /* Further reduce height */
+  }
+
+  .article-content {
+    padding: 1rem;
+  }
+
+  .article-title {
+    font-size: 18px;
   }
 }
 
-/* 
+@media (max-width: 576px) {
+  .latest-article-title h2 {
+    font-size: 26px;
+    margin-bottom: 2rem;
+  }
+
+  .article-card {
+    margin: 0 5px;
+  }
+
+  .article-image {
+    height: 12rem; /* Further reduce height for smaller phones */
+  }
+
+  .article-content {
+    padding: 0.8rem;
+  }
+
+  .article-title {
+    font-size: 16px;
+  }
+}
+
+
+
 .bottom-line {
-    margin-top: 1.5rem;
-    width: 100%;
-    height: 2px;
-    background-color: rgb(77, 77, 77); 
-  } */
-  
+
+  width: 100%; /* Slightly shorter than full width for aesthetics */
+
+  height: 2px; /* Thickness of the line */
+  background-color: rgb(77, 77, 77); /* Match the card border color */
+  opacity: 0.7; /* Subtle appearance */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottom-line {
+    width: 95%; /* Narrower width on smaller screens */
+    margin: 1rem auto; /* Adjust spacing for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .bottom-line {
+    width: 100%; /* Full-width on the smallest screens */
+  }
+}

@@ -38,7 +38,7 @@ function LatestArticle() {
   const settings = {
     speed: 500,
     slidesToShow: 2.7,
-    infinite: false, // Disable infinite scrolling
+    infinite: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,13 +53,20 @@ function LatestArticle() {
         },
       },
       {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1.5, // Slight overlap for mobile
+        },
+      },
+      {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Full-width single card for smaller screens
         },
       },
     ],
   };
+  
 
   return (
     <>
