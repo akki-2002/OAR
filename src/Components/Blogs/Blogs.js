@@ -233,10 +233,15 @@ const blogData = [
         type: "text",
         value: `For a growing business, a website isn’t just an option—it’s a necessity. It establishes credibility, expands your reach, and provides a platform for customer engagement and sales. While social media and other platforms are valuable, they can’t replace the power and control a website gives you over your brand’s digital presence.`,
       },
+      {
+        type: "text",
+        value: `If you’re serious about growth, it’s time to invest in a professional, user-friendly website that showcases your business and supports your ambitions.`,
+      },
     ],
     bottomSection: {
       heading:
-        "If you’re serious about growth, it’s time to invest in a professional, user-friendly website that showcases your business and supports your ambitions.",
+       
+        "Looking for Professional IT Services? <br/> OAR Studios can help you with all your Business needs"
     },
   },
   // Add other blog entries...
@@ -365,10 +370,14 @@ const blogData = [
         type: "text",
         value: `Digital marketing is no longer optional for small-scale businesses—it’s essential. From increasing visibility to driving sales, it offers the tools to compete effectively and grow sustainably. The digital world is full of opportunities for those who are willing to embrace it.`,
       },
+      {
+        type: "text",
+        value: `Are you ready to take your small business to the next level? Start exploring the power of digital marketing today.`,
+      },
     ],
     bottomSection: {
       heading:
-        "Are you ready to take your small business to the next level? Start exploring the power of digital marketing today.",
+        "Looking for Professional IT Services? <br/> OAR Studios can help you with all your Business needs",
     },
   },
 
@@ -506,10 +515,15 @@ const blogData = [
         type: "text",
         value: `Having a website is essential for digital marketing success. It serves as the foundation for your campaigns, enhances visibility, builds trust, and supports every aspect of your online strategy. With a well-designed website, you can maximize the effectiveness of your digital marketing efforts, attract more customers, and drive sustainable growth.`,
       },
+      {
+        type: "text",
+        value: `If you’re looking to take your digital marketing to the next level, start by investing in a professional, user-friendly website. It’s the smartest move for your business’s future.
+`,
+      },
     ],
     bottomSection: {
       heading:
-        "If you’re looking to take your digital marketing to the next level, start by investing in a professional, user-friendly website. It’s the smartest move for your business’s future.",
+        "Looking for Professional IT Services? <br/> OAR Studios can help you with all your Business needs",
     },
   },
 
