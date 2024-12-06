@@ -10,13 +10,11 @@ import nomad from "../../../Videos/Nomad Video.mp4";
 import puba from "../../../Videos/Puba Video.mp4";
 
 const SliderNew = () => {
-  const [slidesToShow, setSlidesToShow] = useState(7);
-  const [perspective, setPerspective] = useState(
-    "rotateX(4deg) rotateY(20deg) rotateZ(5deg)"
-  );
+  const [slidesToShow, setSlidesToShow] = useState(8);
+  const [perspective, setPerspective] = useState("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
   const boxRef = useRef(null);
 
-  // Handle responsive settings for the slider
+  // Responsive slider settings
   useEffect(() => {
     const updateSettings = () => {
       if (window.innerWidth < 425) {
@@ -39,37 +37,27 @@ const SliderNew = () => {
     };
   }, []);
 
-  // Handle scroll effect
+  // Scroll effect with proper event listener
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
-
       if (boxRef.current) {
         boxRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
       }
     };
 
-    const debounceScroll = () => {
-      let timeout;
-      return () => {
-        if (timeout) clearTimeout(timeout);
-        timeout = setTimeout(() => handleScroll(), 50);
-      };
-    };
-
-    const debouncedScroll = debounceScroll();
-    window.addEventListener("scroll", debouncedScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", debouncedScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [perspective]);
+  }, [perspective]); // Trigger on perspective change
 
   // Slider settings
   const settings = {
     infinite: true,
-    slidesToShow, // Use state for real-time updates
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
@@ -77,9 +65,11 @@ const SliderNew = () => {
     cssEase: "linear",
     arrows: false,
     pauseOnHover: false,
+    touchMove: true, // Ensures smooth touch swipe behavior
+    draggable: true, // Allows drag to slide on desktop and mobile
   };
 
-  const images = [acewares, didwania, holayog, nomad, puba];
+  const videos = [acewares, didwania, holayog, nomad, puba, acewares, didwania, holayog, nomad, puba];
 
   return (
     <>
@@ -90,17 +80,19 @@ const SliderNew = () => {
       <div className="container">
         <div className="box" ref={boxRef}>
           <Slider {...settings}>
-            {images.map((image, index) => (
-              <div key={index}>
-                <video
-                  src={image} 
-                  style={{ width: "100%" }}
-                  autoPlay
-                  muted
-                  loop
-                ></video>
-              </div>
-            ))}
+            {videos.map((video, index) => {
+              return (
+                <div key={index}>
+                  <video
+                    src={video}
+                    style={{ width: "100%" }}
+                    autoPlay
+                    muted
+                    loop
+                  ></video>
+                </div>
+              );
+            })}
           </Slider>
         </div>
       </div>

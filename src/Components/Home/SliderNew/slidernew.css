@@ -1,203 +1,189 @@
-  .slider-text-container {
-    text-align: center;
-    margin-top: 90px; 
-    position: relative;
-    /* z-index: 1; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    /* border: 1px solid white; */
-    background-color: transparent;
+/* Ensuring smooth layout across all devices */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Viewport scaling for iOS and other devices */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Slider Text Section */
+.slider-text-container {
+  text-align: center;
+  margin-top: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: transparent;
+}
+
+.innovative-designs {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 82px;
+  color: #FFFFFF;
+  letter-spacing: -0.06em;
+  line-height: 1.1em;
+  font-style: italic;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  animation: id 0.4s ease-in-out;
+}
+
+.seamless-solutions {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  color: #FFC940;
+  margin-top: 10px;
+  line-height: 1.2em;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  background-color: transparent;
+  animation: ss 0.4s ease-in-out;
+}
+
+@keyframes id {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ss {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Video Slider Section */
+.container {
+  perspective: 1000px; /* Adds depth for 3D transformations */
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-top: 3%;
+}
+
+.slick-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 100%;
+  width: 98%;
+}
+
+.box {
+  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Simulates a skew in 3D */
+  transform-style: preserve-3d; /* Ensures child elements respect 3D space */
+  width: 200%;
+  height: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+.slick-slide video {
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+/* Adjustments for iOS and Mobile Screens */
+@media (max-width: 425px) {
+  .box {
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
   }
 
   .innovative-designs {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: 82px;
-    color: #FFFFFF;
-    letter-spacing: -0.06em;
-    line-height: 1.1em;
-    font-style: italic;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-    background-color: transparent;
-    animation: id 0.4s ease-in-out;
+    font-size: 2.3rem;
   }
-
-
 
   .seamless-solutions {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 72px;
-    color: #FFC940;
-    margin-top: 10px;
-    line-height: 1.2em;
-    position: relative;
-    transition: 0.2s ease-in-out;
-    background-color: transparent;
-    animation: ss 0.4s ease-in-out;
+    font-size: 2rem;
+    margin-top: 0;
   }
 
-  @keyframes id {
-    0% {
-        transform: translateY(-100px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-  @keyframes ss {
-    0% {
-        transform: translateY(100px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-  /* Text Section */
   .slider-text-container {
-      text-align: center;
-      margin-top: 90px; 
-      /* border: 1px solid white; */
-    }
-    
-    .slick-slide{
-      margin: 0 7px;
-    }
-
-  .slick-track{
-      display: flex;
+    margin-top: 0;
+    height: 150px;
   }
 
   .container {
-      perspective: 1000px; /* Adds depth for 3D transformations */
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      /* overflow: hidden; */
-      margin-top: 15%;
-    }
+    margin-top: -60px;
+    height: 600px;
+    overflow: hidden;
+  }
 
-    .slick-slider{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      height: 100%;
-      width: 98%;
-    }
+  .slick-list {
+    height: 60%;
+  }
 
-    .op .slick-slider{
-      width: 100%;
-    }
-    
-    .box {
-      transform:rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Simulates a skew in 3D */
-      transform-style: preserve-3d; /* Ensures child elements respect 3D space */
-      width: 200%;
-      height: 100%;
-      /* transition: transform 0.5s ease; */
-      /* position: relative; */
-      /* border: 1px solid white; */
-      background-color: transparent;
-    }
+  .slick-track,
+  .slick-slide,
+  .slick-slide div,
+  .slick-slide video {
+    height: 100%;
+  }
+}
 
-    .slick-slide video{
-      object-fit: cover;
-      aspect-ratio: 3/4;
-    }
-    
-    /* .box:hover {
-      transform: rotateX(-30deg) rotateY(-30deg);
-    } */
-    
+@media (min-width: 425px) and (max-width: 769px) {
+  .box {
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+    width: 240%;
+  }
 
+  .innovative-designs {
+    font-size: 3.3rem;
+  }
 
-    /* media queries  */
-    @media (max-width: 425px)
-    {
+  .seamless-solutions {
+    font-size: 3rem;
+    margin-top: 0;
+  }
 
-      .box{
-        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
-      }
+  .slider-text-container {
+    margin-top: 0;
+  }
 
-      .innovative-designs{
-        font-size: 2.3rem;
-      } 
-      
-      .seamless-solutions{
-        font-size: 2rem;
-        margin-top: 0;
-      }
+  .container {
+    margin-top: -60px;
+    height: 600px;
+  }
 
-      .slider-text-container{
-        margin-top: 0;
-        height: 150px;
-      }
+  .slick-list {
+    height: 70%;
+  }
 
-      .container{
-        margin-top: -60px;
-        height: 600px;
-        overflow: hidden;
-        /* border: 1px solid white; */
-      }
+  .slick-track,
+  .slick-slide,
+  .slick-slide div,
+  .slick-slide video {
+    height: 100%;
+  }
+}
 
-      .slick-list{
-        height: 60%;
-      } 
-      
-      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
-        height: 100%;
-      }
-    }
+/* Additional styles to smoothen scrolling */
+html, body {
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+}
 
-    @media (min-width: 425px) and (max-width: 769px) {
-
-      .box{
-        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
-        width: 240%;
-      }
-
-      .innovative-designs{
-        font-size: 3.3rem;
-      } 
-      
-      .seamless-solutions{
-        font-size: 3rem;
-        margin-top: 0;
-      }
-
-      .slider-text-container{
-        margin-top: 0;
-
-      }
-
-      .container{
-        margin-top: -60px;
-        height: 600px;
-        /* overflow: hidden; */
-        /* border: 1px solid white; */
-      }
-
-      .slick-list{
-        height: 70%;
-      } 
-      
-      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
-        height: 100%;
-      }
-    }
-
-
-
-    .slick-slide {
-      transition: transform 0.3s ease;
-    }
+/* Transition Effects */
+.slick-slide {
+  transition: transform 0.3s ease;
+}
