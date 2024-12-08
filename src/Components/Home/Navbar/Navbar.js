@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './Navbar.css'; 
 import HamburgerIcon from '../../../Images/hamburger.png'; 
 import ArrowDownIcon from '../../../Images/arrow-down.png'; 
+import closeIcon from "../../../Images/close (1).png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,6 +49,9 @@ const Navbar = () => {
   ref={menuRef}
   onMouseLeave={closeMenu}
 >
+<button className="close-button" onClick={closeMenu}>
+    <img src={closeIcon} alt="Close Menu" />
+  </button>
   <nav>
     <ul className="menu-links">
       <li><a href="/" onClick={closeMenu}>HOME <img src={ArrowDownIcon} className="home-spe arrow-down" alt="arrow" /></a></li>
