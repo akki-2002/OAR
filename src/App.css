@@ -7,7 +7,14 @@
 *{
   background-color: #141414;
   margin: 0;
+  padding: 0;
 }
+
+html, body {
+  /* height: auto; */
+  /* overflow: visible; */
+}
+
 
 input[type="checkbox"] {
   appearance: none; /* Removes default styling */
@@ -48,7 +55,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .scroll-container {
-  overflow-y: auto; /* Allows vertical scrolling */
+  /* overflow-y: auto; */
   height: 100vh; /* Adjust height as needed */
   scrollbar-width: none; /* Hides scrollbar for Firefox */
 }

@@ -17,11 +17,11 @@ function FooterMain() {
       <div className="footer-main-right">
         <div className="footer-main-links">
           <ul>
-            <li>ABOUT US</li>
+            {/* <li>ABOUT US</li>
             <li>PRIVACY POLICY</li>
             <li>CONTACT US</li>
             <li>ABOUT US</li>
-            <li>ABOUT US</li>
+            <li>ABOUT US</li> */}
           </ul>
         </div>
         <div className="footer-main-social">

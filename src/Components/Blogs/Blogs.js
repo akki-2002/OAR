@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import "./Blogs.css";
 import img1 from "../../Images/blog2.png";
 import img2 from "../../Images/blog.png";
@@ -244,7 +244,7 @@ const blogData = [
         "Looking for Professional IT Services? <br/> OAR Studios can help you with all your Business needs"
     },
   },
-  // Add other blog entries...
+
 
 
   {
@@ -676,6 +676,15 @@ const blogData = [
 
 function Blogs() {
   const { id } = useParams(); // Get the blog ID from the URL
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer) {
+      scrollContainer.scrollTo(0, 0);
+    }
+  }, [id, location]);
+  
   const blog = blogData.find((b) => b.id === parseInt(id)); // Find the specific blog by ID
 
   if (!blog) {

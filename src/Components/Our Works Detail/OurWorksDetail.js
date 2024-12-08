@@ -2,47 +2,85 @@ import React, { useState, useLayoutEffect, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './OurWorksDetail.css';
 
+const worksData = [
+  {
+    id: "1",
+    title: "Ace Wears Website Design",
+    name: "ACE WEARS",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Ace Wears.webp"),
+  },
+  {
+    id: "2",
+    title: "Didwania Creations Administrative Controls",
+    name: "DIDWANIA",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Didwania.webp"),
+  },
+  {
+    id: "3",
+    title: "Nomad Interiors Web Design",
+    name: "NOMAD",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Nomad Interiors.webp"),
+  },
+  {
+    id: "4",
+    title: "Puba Productions Web Design & Development",
+    name: "PUBA",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Puba (1).webp"),
+  },
+  {
+    id: "5",
+    title: "Nomad Interiors Web Design",
+    name: "NOMAD",
+    category: "WEB DESIGN",
+    imgSrc: require("../../Images/Nomad Interiors.webp"),
+  },
+];
+
 function OurWorksDetail() {
   const { id } = useParams();
   const [work, setWork] = useState(null);
 
-  const worksData = [
-    {
-      id: "1",
-      title: "Ace Wears Website Design",
-      name: "ACE WEARS",
-      category: "WEB DESIGN",
-      imgSrc: require("../../Images/Ace Wears.jpg"),
-    },
-    {
-      id: "2",
-      title: "Didwania Creations Administrative Controls",
-      name: "DIDWANIA",
-      category: "WEB DESIGN",
-      imgSrc: require("../../Images/Didwania.jpg"),
-    },
-    {
-      id: "3",
-      title: "Nomad Interiors Web Design",
-      name: "NOMAD",
-      category: "WEB DESIGN",
-      imgSrc: require("../../Images/Nomad.jpg"),
-    },
-    {
-      id: "4",
-      title: "Puba Productions Web Design & Development",
-      name: "PUBA",
-      category: "WEB DESIGN",
-      imgSrc: require("../../Images/Puba.jpg"),
-    },
-    {
-      id: "5",
-      title: "Nomad Interiors Web Design",
-      name: "NOMAD",
-      category: "WEB DESIGN",
-      imgSrc: require("../../Images/Nomad.jpg"),
-    },
-  ];
+  // const worksData = [
+  //   {
+  //     id: "1",
+  //     title: "Ace Wears Website Design",
+  //     name: "ACE WEARS",
+  //     category: "WEB DESIGN",
+  //     imgSrc: require("../../Images/Ace Wears.jpg"),
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Didwania Creations Administrative Controls",
+  //     name: "DIDWANIA",
+  //     category: "WEB DESIGN",
+  //     imgSrc: require("../../Images/Didwania.jpg"),
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Nomad Interiors Web Design",
+  //     name: "NOMAD",
+  //     category: "WEB DESIGN",
+  //     imgSrc: require("../../Images/Nomad.jpg"),
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Puba Productions Web Design & Development",
+  //     name: "PUBA",
+  //     category: "WEB DESIGN",
+  //     imgSrc: require("../../Images/Puba.jpg"),
+  //   },
+  //   {
+  //     id: "5",
+  //     title: "Nomad Interiors Web Design",
+  //     name: "NOMAD",
+  //     category: "WEB DESIGN",
+  //     imgSrc: require("../../Images/Nomad.jpg"),
+  //   },
+  // ];
   useEffect(()=>{
     window.scrollTo({
       top: 0,
@@ -56,9 +94,14 @@ function OurWorksDetail() {
 
   // Set the selected work based on the ID
   useEffect(() => {
-    const selectedWork = worksData.find((item) => item.id === id);
-    setWork(selectedWork);
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer) {
+      scrollContainer.scrollTo(0, 0);
+    }
   }, [id]);
+  
+  
+  
 
   if (!work) {
     return <div>Work not found</div>;

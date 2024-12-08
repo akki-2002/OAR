@@ -25,6 +25,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  width: 100%;
 }
 
 .article-card {
@@ -35,6 +36,7 @@
   flex-direction: column;
   margin: 0 10px; /* Add margin for spacing on smaller screens */
   cursor: pointer;
+  height: 35rem;
 }
 
 .article-image {
@@ -177,3 +179,12 @@
     width: 100%; /* Full-width on the smallest screens */
   }
 }
+
+
+
+
+
+
+
+
+

@@ -20,12 +20,12 @@
   font-weight: bold;
   color: #FFC940;
   font-family: "Gajraj One";
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
 }
 
 .footer-main-location {
   margin-bottom: 1rem;
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   font-family: "Bebas Neue", sans-serif;
 }
@@ -44,8 +44,8 @@
 
 .footer-main-links ul {
   list-style: none;
-  padding: 4rem 0rem 5rem 0rem;
-  border-bottom: 1px solid rgb(40, 40, 40);
+  padding: 3rem;
+  /* border-bottom: 1px solid rgb(40, 40, 40); */
 }
 
 .footer-main-links ul li {
@@ -68,7 +68,7 @@
 }
 
 .footer-main-social-icons i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-right: 30px;
   cursor: pointer;
   color: rgb(48, 48, 48);
@@ -79,12 +79,14 @@
 }
 
 .footer-main-copyright {
-  font-size: 32px;
+  font-size: 3rem;
   text-align: right;
   font-family: "Bebas Neue", sans-serif;
   color: rgb(48, 48, 48);
 }
-
+.footer-main-copyright:hover{
+  color: #ffc107;
+}
 /* Responsive styles */
 @media (max-width: 1024px) {
   .footer-main {
@@ -96,7 +98,7 @@
   .footer-main-left {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid rgb(40, 40, 40);
+    /* border-bottom: 1px solid rgb(40, 40, 40); */
     padding: 0;
   }
 
@@ -119,7 +121,7 @@
   }
 
   .footer-main-links ul {
-    padding: 2rem 0;
+    padding: 1rem 0;
     border-bottom: none;
   }
 

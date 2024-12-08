@@ -3,17 +3,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Our Projects/OurProjects.css";
-import aceWearsLogo from "../../../Images/1.png";
-import nomadLogo from "../../../Images/2.png";
-import pubaLogo from "../../../Images/3.png";
-import didwaniaLogo from "../../../Images/4.png";
-import holaYogLogo from "../../../Images/5.png";
-import aceWearsLogoDark from "../../../Images/8.png";
-import nomadLogoDark from "../../../Images/9.png";
-import pubaLogoDark from "../../../Images/10.png";
-import didwaniaLogoDark from "../../../Images/11.png";
-import holaYogLogoDark from "../../../Images/12.png";
-import { Link, useNavigate } from "react-router-dom";
+import aceWearsLogo from '../../../Images/1.png';
+import nomadLogo from '../../../Images/2.png';
+import pubaLogo from '../../../Images/3.png';
+import didwaniaLogo from '../../../Images/4.png';
+import holaYogLogo from '../../../Images/5.png';
+import aceWearsLogoDark from '../../../Images/8.png';
+import nomadLogoDark from '../../../Images/9.png';
+import pubaLogoDark from '../../../Images/10.png';
+import didwaniaLogoDark from '../../../Images/11.png';
+import holaYogLogoDark from '../../../Images/12.png';
+import { useNavigate } from "react-router-dom";
 
 const OurProjects = () => {
   const [sts, setSts] = useState(3); // Default for larger screens
@@ -62,9 +62,8 @@ const OurProjects = () => {
     { id: "5", light: holaYogLogo, dark: holaYogLogoDark },
   ];
 
-  const handleOpenProject = (id) => {
-    navigate(`/our-works/${id}`);
-    
+  const handleNavigate = (id) => {
+    window.location.href = `/our-works/${id}`;
   };
 
   return (
@@ -77,7 +76,11 @@ const OurProjects = () => {
       {/* First Slider */}
       <Slider {...settings}>
         {images.map((image) => (
-          <Link to={`/our-works/${image.id}`} key={image.id}>
+          <div
+            key={image.id}
+            onClick={() => handleNavigate(image.id)}
+            style={{ cursor: "pointer" }}
+          >
             <img
               src={image.dark}
               alt={`Slide ${image.id}`}
@@ -91,14 +94,18 @@ const OurProjects = () => {
             <div className="view">
               <button>VIEW</button>
             </div>
-          </Link>
+          </div>
         ))}
       </Slider>
 
       {/* Second Slider (RTL) */}
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
-          <Link  to={`/our-works/${image.id}`} key={image.id}>
+          <div
+            key={image.id}
+            onClick={() => handleNavigate(image.id)}
+            style={{ cursor: "pointer" }}
+          >
             <img
               src={image.dark}
               alt={`Slide ${image.id}`}
@@ -112,7 +119,7 @@ const OurProjects = () => {
             <div className="view">
               <button>VIEW</button>
             </div>
-          </Link>
+          </div>
         ))}
       </Slider>
     </div>

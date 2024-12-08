@@ -1,4 +1,10 @@
 /* Container */
+
+html, body {
+  height: auto;
+  overflow: visible;
+}
+
 .works-container {
     
     padding: 4rem;

@@ -96,7 +96,7 @@
     position: relative;
 }
 
-.slick-slide a{
+.op .slick-slide a{
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -238,4 +238,37 @@
         font-size: 0.8rem;
         margin-bottom: 20px;
     }
+}
+
+
+
+
+
+.op .slick-track {
+    display: flex; /* Change from Slick's default to flexbox */
+    gap: 15px; /* Define the desired gap */
+}
+
+.op .slick-slide {
+    flex: 0 0 auto; /* Ensure slides do not shrink or stretch */
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.op .slick-list {
+    overflow: hidden; /* Prevent overflow caused by gaps */
+}
+@media (max-width: 768px) {
+    .op .slick-track {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+}
+
+
+
+
+.op img {
+    pointer-events: auto;
 }
