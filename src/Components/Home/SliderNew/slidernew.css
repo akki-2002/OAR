@@ -72,16 +72,13 @@ html {
 
 /* Video Slider Section */
 .container {
-  perspective: 1000px; 
-  /* border: 1px solid white; */
+  perspective: 1000px; /* Adds depth for 3D transformations */
+  
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   margin-top: 3%;
-  /* overflow: visible; */
-  width: 100%;
-  /* margin-left: 10%; */
 }
 
 .box .slick-slider {
@@ -94,25 +91,12 @@ html {
 }
 
 .box {
-  /* Ensures child elements respect 3D space */
+  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg) translate(0); /* Simulates a skew in 3D */
+  transform-style: preserve-3d; /* Ensures child elements respect 3D space */
   width: 200%;
   height: 100%;
   position: relative;
   background-color: transparent;
-}
-
-.boxOuter{
-  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Simulates a skew in 3D */
-  transform-style: preserve-3d; 
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid white;
-  background-color: transparent;
-/* width: 200%; */
-  height: 700px;
 }
 
 .box .slick-slide video {
@@ -123,7 +107,7 @@ html {
 /* Adjustments for iOS and Mobile Screens */
 @media (max-width: 425px) {
   .box {
-    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg) translate(0);
   }
 
   .innovative-designs {
@@ -160,7 +144,7 @@ html {
 
 @media (min-width: 425px) and (max-width: 769px) {
   .box {
-    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg) translate(0);
     width: 240%;
   }
 
@@ -207,7 +191,7 @@ html {
     @media (min-width: 425px) and (max-width: 769px) {
 
       .box{
-        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg) translate(0);
         width: 240%;
       }
 
