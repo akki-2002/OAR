@@ -13,7 +13,6 @@ import nomadLogoDark from '../../../Images/9.png';
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
-import { Link } from "react-router-dom";
 
 const OurProjects = () => {
   const [sts, setSts] = useState(3);
@@ -48,6 +47,10 @@ const OurProjects = () => {
     { id: "5", light: holaYogLogo, dark: holaYogLogoDark },
   ];
 
+  const handleNavigate = (id) => {
+    window.location.href = `/our-works/${id}`;
+  };
+
   return (
     <div className="op">
       <div className="heading">
@@ -57,47 +60,49 @@ const OurProjects = () => {
 
       <Slider {...settings} style={{ marginBottom: "15px" }}>
         {images.map((image) => (
-          <Link to={`/our-works/${image.id}`} key={image.id}>
-            {/* <div className="opImgWrapper"> */}
-              <img
-                src={image.dark}
-                alt={`Slide ${image.id}`}
-                className="opImg dark"
-              />
-              <img
-                src={image.light}
-                alt={`Slide ${image.id}`}
-                className="opImg light"
-              />
-              <div className="view">
-                <button>VIEW</button>
-              </div>
-              {/* <div className="fadeBox"></div> */}
-            {/* </div> */}
-          </Link>
+          <div
+            key={image.id}
+            onClick={() => handleNavigate(image.id)}
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={image.dark}
+              alt={`Slide ${image.id}`}
+              className="opImg dark"
+            />
+            <img
+              src={image.light}
+              alt={`Slide ${image.id}`}
+              className="opImg light"
+            />
+            <div className="view">
+              <button>VIEW</button>
+            </div>
+          </div>
         ))}
       </Slider>
 
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
-          <Link to={`/our-works/${image.id}`} key={image.id}>
-            {/* <div className="opImgWrapper"> */}
-              <img
-                src={image.dark}
-                alt={`Slide ${image.id}`}
-                className="opImg dark"
-              />
-              <img
-                src={image.light}
-                alt={`Slide ${image.id}`}
-                className="opImg light"
-              />
-              <div className="view">
-                <button>VIEW</button>
-              </div>
-              {/* <div className="fadeBox"></div> */}
-            {/* </div> */}
-          </Link>
+          <div
+            key={image.id}
+            onClick={() => handleNavigate(image.id)}
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={image.dark}
+              alt={`Slide ${image.id}`}
+              className="opImg dark"
+            />
+            <img
+              src={image.light}
+              alt={`Slide ${image.id}`}
+              className="opImg light"
+            />
+            <div className="view">
+              <button>VIEW</button>
+            </div>
+          </div>
         ))}
       </Slider>
     </div>

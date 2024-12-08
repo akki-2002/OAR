@@ -254,3 +254,10 @@
         gap: 10px; /* Reduce gap for smaller screens */
     }
 }
+
+
+
+
+.op img {
+    pointer-events: auto;
+}

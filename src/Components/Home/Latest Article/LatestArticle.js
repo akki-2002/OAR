@@ -6,7 +6,6 @@ import blog2 from "../../../Images/blog3.png";
 import blog3 from "../../../Images/blog5.png";
 import blog4 from "../../../Images/blog7.png";
 import blog5 from "../../../Images/blog9.png";
-import { Link } from "react-router-dom";
 
 function LatestArticle() {
   const articles = [
@@ -71,17 +70,29 @@ function LatestArticle() {
     ],
   };
 
+  const handleNavigate = (id) => {
+    window.location.href = `/blogs/${id}`;
+  };
+
   return (
     <>
-    <div className="latest-article">
-      <div className="latest-article-title">
-        <h2>Latest Articles</h2>
-      </div>
-      <Slider {...settings} className="articles-slider">
-        {articles.map((article) => (
-          <Link to={`/blogs/${article.id}`} key={article.id}>
-            <div className="article-card">
-              <img src={article.image} alt={article.title} className="article-image" />
+      <div className="latest-article">
+        <div className="latest-article-title">
+          <h2>Latest Articles</h2>
+        </div>
+        <Slider {...settings} className="articles-slider">
+          {articles.map((article) => (
+            <div
+              key={article.id}
+              className="article-card"
+              onClick={() => handleNavigate(article.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                src={article.image}
+                alt={article.title}
+                className="article-image"
+              />
               <div className="article-content">
                 <div className="article-meta">
                   <span className="category">{article.category}</span>
@@ -90,13 +101,11 @@ function LatestArticle() {
                 <h3 className="article-title">{article.title}</h3>
               </div>
             </div>
-          </Link>
-        ))}
-      </Slider>
-    
-    </div>
+          ))}
+        </Slider>
+      </div>
       <div className="bottom-line"></div>
-      </>
+    </>
   );
 }
 
