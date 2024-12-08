@@ -9,6 +9,12 @@
   margin: 0;
 }
 
+html, body {
+  height: auto;
+  overflow: visible;
+}
+
+
 input[type="checkbox"] {
   appearance: none; /* Removes default styling */
   width: 25px;
