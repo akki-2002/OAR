@@ -13,26 +13,41 @@ import nomadLogoDark from '../../../Images/9.png';
 import pubaLogoDark from '../../../Images/10.png';
 import didwaniaLogoDark from '../../../Images/11.png';
 import holaYogLogoDark from '../../../Images/12.png';
+import { useNavigate } from "react-router-dom";
 
 const OurProjects = () => {
-  const [sts, setSts] = useState(3);
+  const [sts, setSts] = useState(3); // Default for larger screens
+  const navigate = useNavigate();
+  const [opp, setOpp] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setSts(2);
-    }
+    // Adjust slider settings for smaller screens
+    const handleResize = () => {
+      if (window.innerWidth < 425) {
+        setSts(2); // Show 1 slide on mobile screens
+      } else {
+        setSts(3); // Show 3 slides on larger screens
+      }
+    };
+
+    handleResize(); // Call the function on mount
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const settings = {
     infinite: true,
     slidesToShow: sts,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: true, 
     autoplaySpeed: 0,
     speed: 8000,
     cssEase: "linear",
     arrows: false,
-    pauseOnHover: false,
+    pauseOnHover: false, 
+    
   };
 
   const settings2 = {
@@ -58,7 +73,8 @@ const OurProjects = () => {
       </div>
       <div className="shadow"></div>
 
-      <Slider {...settings} style={{ marginBottom: "15px" }}>
+      {/* First Slider */}
+      <Slider {...settings}>
         {images.map((image) => (
           <div
             key={image.id}
@@ -82,6 +98,7 @@ const OurProjects = () => {
         ))}
       </Slider>
 
+      {/* Second Slider (RTL) */}
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
           <div

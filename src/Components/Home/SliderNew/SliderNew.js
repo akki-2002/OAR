@@ -42,12 +42,14 @@ const SliderNew = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
+      console.log(boxRef)
       if (boxRef.current) {
         boxRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    console.log(boxRef)
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -79,6 +81,9 @@ const SliderNew = () => {
       </div>
       <div className="container">
         <div className="box" ref={boxRef}>
+          <div className="boxInner">
+            
+          </div>
           <Slider {...settings}>
             {videos.map((video, index) => {
               return (

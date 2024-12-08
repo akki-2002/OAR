@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +16,17 @@ import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
 
 function App() {
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  },[])
+
+  const [wp, setWp] = useState("static")
+  const handleOp = (pt) =>{
+    setWp(pt)
+  }
   return (
     <div className="scroll-container">
       <Router>

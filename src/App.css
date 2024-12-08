@@ -7,11 +7,12 @@
 *{
   background-color: #141414;
   margin: 0;
+  padding: 0;
 }
 
 html, body {
-  height: auto;
-  overflow: visible;
+  /* height: auto; */
+  /* overflow: visible; */
 }
 
 
@@ -54,7 +55,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .scroll-container {
-  overflow-y: auto; /* Allows vertical scrolling */
+  /* overflow-y: auto; */
   height: 100vh; /* Adjust height as needed */
   scrollbar-width: none; /* Hides scrollbar for Firefox */
 }
@@ -63,3 +64,8 @@ input[type="checkbox"]:checked::before {
   display: none; /* Hides scrollbar for WebKit-based browsers */
 }
 
+#work{
+  /* position: absolute; */
+  top: 0;
+  z-index: 10;
+}
