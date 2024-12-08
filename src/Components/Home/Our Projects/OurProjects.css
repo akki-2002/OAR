@@ -247,7 +247,6 @@
     border: 1px solid transparent;
 }
 .slick-list {
-    padding: 0 10px; /* Optional: Adjust padding for smoother edges */
     overflow: hidden; /* Prevent overflow caused by gaps */
 }
 @media (max-width: 768px) {
