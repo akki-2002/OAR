@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 /* Viewport scaling for iOS and other devices */
 html {
   -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
@@ -73,7 +74,7 @@ html {
 /* Video Slider Section */
 .container {
   perspective: 1000px; /* Adds depth for 3D transformations */
-  height: 500px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,7 +82,7 @@ html {
   margin-top: 3%;
 }
 
-.slick-slider {
+.box .slick-slider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +100,7 @@ html {
   background-color: transparent;
 }
 
-.slick-slide video {
+.box .slick-slide video {
   object-fit: cover;
   aspect-ratio: 3/4;
 }
@@ -130,14 +131,14 @@ html {
     overflow: hidden;
   }
 
-  .slick-list {
+  .box .slick-list {
     height: 60%;
   }
 
-  .slick-track,
-  .slick-slide,
-  .slick-slide div,
-  .slick-slide video {
+  .box .slick-track,
+  .box .slick-slide,
+  .box .slick-slide div,
+  .box .slick-slide video {
     height: 100%;
   }
 }
@@ -166,23 +167,23 @@ html {
     height: 600px;
   }
 
-  .slick-list {
+  .box .slick-list {
     height: 70%;
   }
 
-  .slick-track,
-  .slick-slide,
-  .slick-slide div,
-  .slick-slide video {
+  .box .slick-track,
+  .box .slick-slide,
+  .box .slick-slide div,
+  .box .slick-slide video {
     height: 100%;
   }
 }
 
-      .slick-list{
+      .box .slick-list{
         height: 60%;
       } 
       
-      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
+      .box .slick-track,.box .slick-slide,.box .slick-slide div, .box .slick-slide video{
         height: 100%;
      
       }
@@ -216,11 +217,11 @@ html {
         /* border: 1px solid white; */
       }
 
-      .slick-list{
+      .box .slick-list{
         height: 70%;
       } 
       
-      .slick-track,.slick-slide,.slick-slide div, .slick-slide video{
+      .box .slick-track,.box .slick-slide,.box .slick-slide div, .box .slick-slide video{
         height: 100%;
 
       }
@@ -228,7 +229,7 @@ html {
 
 
 
-    .slick-slide {
+    .box .slick-slide {
       transition: transform 0.3s ease;
     }
 /* Additional styles to smoothen scrolling */
@@ -237,6 +238,12 @@ html, body {
 }
 
 /* Transition Effects */
-.slick-slide {
+.box .slick-slide {
   transition: transform 0.3s ease;
+}
+
+@media (min-width: 1440px) {
+  .container{
+    height: 100vh;
+  }
 }

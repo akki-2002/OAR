@@ -40,6 +40,17 @@
     /* padding: 3px; */
     border: 1px solid transparent;
     justify-content: center;
+    /* margin: 0 30px; */
+}
+
+
+.op .slick-track{
+    display: flex;
+}
+
+.op .slick-track:nth-child(1)
+{
+    margin-bottom: 15px;
 }
 
 .op .heading{
@@ -57,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
+    margin: 0 7.5px;
 }
 
 .op .slick-slide:hover{
@@ -223,8 +234,8 @@
 /* Further adjustments for very small screens (mobile) */
 @media (max-width: 480px) {
     .view button {
-        padding: 4px 12px; /* Compact padding for mobile */
-        font-size: 0.8rem; /* Smaller font size */
-        margin-bottom: 20px; /* Smaller margin */
+        padding: 4px 12px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
     }
 }

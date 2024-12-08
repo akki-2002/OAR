@@ -3,37 +3,51 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Our Projects/OurProjects.css";
-import aceWearsLogo from '../../../Images/1.png';
-import nomadLogo from '../../../Images/2.png';
-import pubaLogo from '../../../Images/3.png';
-import didwaniaLogo from '../../../Images/4.png';
-import holaYogLogo from '../../../Images/5.png';
-import aceWearsLogoDark from '../../../Images/8.png';
-import nomadLogoDark from '../../../Images/9.png';
-import pubaLogoDark from '../../../Images/10.png';
-import didwaniaLogoDark from '../../../Images/11.png';
-import holaYogLogoDark from '../../../Images/12.png';
-import { Link } from "react-router-dom";
+import aceWearsLogo from "../../../Images/1.png";
+import nomadLogo from "../../../Images/2.png";
+import pubaLogo from "../../../Images/3.png";
+import didwaniaLogo from "../../../Images/4.png";
+import holaYogLogo from "../../../Images/5.png";
+import aceWearsLogoDark from "../../../Images/8.png";
+import nomadLogoDark from "../../../Images/9.png";
+import pubaLogoDark from "../../../Images/10.png";
+import didwaniaLogoDark from "../../../Images/11.png";
+import holaYogLogoDark from "../../../Images/12.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const OurProjects = () => {
-  const [sts, setSts] = useState(3);
+  const [sts, setSts] = useState(3); // Default for larger screens
+  const navigate = useNavigate();
+  const [opp, setOpp] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setSts(2);
-    }
+    // Adjust slider settings for smaller screens
+    const handleResize = () => {
+      if (window.innerWidth < 425) {
+        setSts(2); // Show 1 slide on mobile screens
+      } else {
+        setSts(3); // Show 3 slides on larger screens
+      }
+    };
+
+    handleResize(); // Call the function on mount
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const settings = {
     infinite: true,
     slidesToShow: sts,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: true, 
     autoplaySpeed: 0,
     speed: 8000,
     cssEase: "linear",
     arrows: false,
-    pauseOnHover: false,
+    pauseOnHover: false, 
+    
   };
 
   const settings2 = {
@@ -48,6 +62,11 @@ const OurProjects = () => {
     { id: "5", light: holaYogLogo, dark: holaYogLogoDark },
   ];
 
+  const handleOpenProject = (id) => {
+    navigate(`/our-works/${id}`);
+    
+  };
+
   return (
     <div className="op">
       <div className="heading">
@@ -55,48 +74,44 @@ const OurProjects = () => {
       </div>
       <div className="shadow"></div>
 
-      <Slider {...settings} style={{ marginBottom: "15px" }}>
+      {/* First Slider */}
+      <Slider {...settings}>
         {images.map((image) => (
           <Link to={`/our-works/${image.id}`} key={image.id}>
-            {/* <div className="opImgWrapper"> */}
-              <img
-                src={image.dark}
-                alt={`Slide ${image.id}`}
-                className="opImg dark"
-              />
-              <img
-                src={image.light}
-                alt={`Slide ${image.id}`}
-                className="opImg light"
-              />
-              <div className="view">
-                <button>VIEW</button>
-              </div>
-              {/* <div className="fadeBox"></div> */}
-            {/* </div> */}
+            <img
+              src={image.dark}
+              alt={`Slide ${image.id}`}
+              className="opImg dark"
+            />
+            <img
+              src={image.light}
+              alt={`Slide ${image.id}`}
+              className="opImg light"
+            />
+            <div className="view">
+              <button>VIEW</button>
+            </div>
           </Link>
         ))}
       </Slider>
 
+      {/* Second Slider (RTL) */}
       <Slider {...settings} {...settings2}>
         {images.map((image) => (
-          <Link to={`/our-works/${image.id}`} key={image.id}>
-            {/* <div className="opImgWrapper"> */}
-              <img
-                src={image.dark}
-                alt={`Slide ${image.id}`}
-                className="opImg dark"
-              />
-              <img
-                src={image.light}
-                alt={`Slide ${image.id}`}
-                className="opImg light"
-              />
-              <div className="view">
-                <button>VIEW</button>
-              </div>
-              {/* <div className="fadeBox"></div> */}
-            {/* </div> */}
+          <Link  to={`/our-works/${image.id}`} key={image.id}>
+            <img
+              src={image.dark}
+              alt={`Slide ${image.id}`}
+              className="opImg dark"
+            />
+            <img
+              src={image.light}
+              alt={`Slide ${image.id}`}
+              className="opImg light"
+            />
+            <div className="view">
+              <button>VIEW</button>
+            </div>
           </Link>
         ))}
       </Slider>
