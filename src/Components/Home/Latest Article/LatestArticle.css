@@ -47,8 +47,13 @@
   /* margin: 0 10px;  */
   cursor: pointer;
   /* height: 35rem; */
-  min-height: max-content;
+  min-height: 35rem;
 }
+ @media (max-width: 768px) {
+  .article-card{
+    min-height: 20rem;
+  }
+ }
 
 .article-image {
   width: 100%;
