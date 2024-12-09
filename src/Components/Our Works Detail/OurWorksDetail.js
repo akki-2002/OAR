@@ -1,5 +1,5 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import './OurWorksDetail.css';
 
 const worksData = [
@@ -42,70 +42,27 @@ const worksData = [
 
 function OurWorksDetail() {
   const { id } = useParams();
-  const [work, setWork] = useState(null);
+  const location = useLocation();
 
-  // const worksData = [
-  //   {
-  //     id: "1",
-  //     title: "Ace Wears Website Design",
-  //     name: "ACE WEARS",
-  //     category: "WEB DESIGN",
-  //     imgSrc: require("../../Images/Ace Wears.jpg"),
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "Didwania Creations Administrative Controls",
-  //     name: "DIDWANIA",
-  //     category: "WEB DESIGN",
-  //     imgSrc: require("../../Images/Didwania.jpg"),
-  //   },
-  //   {
-  //     id: "3",
-  //     title: "Nomad Interiors Web Design",
-  //     name: "NOMAD",
-  //     category: "WEB DESIGN",
-  //     imgSrc: require("../../Images/Nomad.jpg"),
-  //   },
-  //   {
-  //     id: "4",
-  //     title: "Puba Productions Web Design & Development",
-  //     name: "PUBA",
-  //     category: "WEB DESIGN",
-  //     imgSrc: require("../../Images/Puba.jpg"),
-  //   },
-  //   {
-  //     id: "5",
-  //     title: "Nomad Interiors Web Design",
-  //     name: "NOMAD",
-  //     category: "WEB DESIGN",
-  //     imgSrc: require("../../Images/Nomad.jpg"),
-  //   },
-  // ];
-  useEffect(()=>{
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-
-    // this.props.history.listen((location, action) => {
-    //   setTimeout(()=>{document.getElementById('root'.scrollIntoView({behavior: "smooth" }) )})
-    // })
-  },[])
-
-  // Set the selected work based on the ID
   useEffect(() => {
-    const scrollContainer = document.querySelector('.scroll-container');
+    const scrollContainer = document.querySelector(".scroll-container");
     if (scrollContainer) {
       scrollContainer.scrollTo(0, 0);
     }
-  }, [id]);
-  
-  
-  
+  }, [id, location]);
+
+  const work = worksData.find((w) => w.id === id);
 
   if (!work) {
-    return <div>Work not found</div>;
+    return <div>Work not found!</div>;
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="works-container">
@@ -114,11 +71,30 @@ function OurWorksDetail() {
         <div className="works-line"></div>
         <span className="works-right-text">{work.category}</span>
       </div>
-      <div className="works-main-content">
+      <div className="works-main-content" onClick={scrollToTop}>
         <h1 className="works-title">{work.title}</h1>
       </div>
-      <div className="works-image-container">
+      <div className="works-image-container" onClick={scrollToTop}>
         <img src={work.imgSrc} alt={work.title} className="works-image" />
+      </div>
+      <div className="works-content">
+        {work.content &&
+          work.content.map((item, index) => {
+            switch (item.type) {
+              case "text":
+                return <p key={index} className="works-text">{item.value}</p>;
+              case "header":
+                return <h2 key={index} className="works-header">{item.value}</h2>;
+              case "image":
+                return (
+                  <div key={index} className="content-image">
+                    <img src={item.value} alt="Work content" />
+                  </div>
+                );
+              default:
+                return null;
+            }
+          })}
       </div>
     </div>
   );
