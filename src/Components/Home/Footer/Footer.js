@@ -58,7 +58,9 @@ const Footer = () => {
             <img src={copy} alt="Copy icon" />
           </div>
         </div>
-        <p className="email">oarstudioz@gmail.com</p>
+        <p className="email">
+          <a href="mailto:oarstudioz@gmail.com">oarstudioz@gmail.com</a>
+        </p>
         <form onSubmit={handleSubmit}>
           <label className="services-heading">Services that you require *</label>
           <div className="services-checkboxes">

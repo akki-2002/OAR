@@ -64,14 +64,15 @@
   width: 22px; /* Adjust size of the icon */
 }
 
-.email {
+.email a{
   font-size: 59px;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #edeae4;
+  text-decoration: none;
 }
 
-.email:hover {
+.email a:hover {
   color: rgb(255, 201, 64);
   cursor: pointer;
 }
