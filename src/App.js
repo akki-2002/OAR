@@ -14,6 +14,7 @@ import OurProjects from './Components/Home/Our Projects/OurProjects';
 import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail';
 import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
+import Loader from './Components/Loader';
 
 function App() {
   useEffect(()=>{
@@ -27,8 +28,23 @@ function App() {
   const handleOp = (pt) =>{
     setWp(pt)
   }
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Replace with actual data loading logic
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className="scroll-container">
+    <>
+    {loading ? (
+        <Loader /> // Show loader when loading
+      ) : (
+<div className="scroll-container">
       <Router>
         <Navbar />
         <Routes>
@@ -75,6 +91,9 @@ function App() {
         </div>
       </Router>
     </div>
+      )}
+    </>
+    
   );
 }
 
