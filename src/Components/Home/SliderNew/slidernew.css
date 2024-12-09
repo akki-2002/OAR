@@ -94,7 +94,7 @@ html {
   transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Simulates a skew in 3D */
   transform-style: preserve-3d; /* Ensures child elements respect 3D space */
   width: 200%;
-  height: 100%;
+  height: 120%;
   position: relative;
   background-color: transparent;
 }
@@ -162,7 +162,7 @@ html {
   }
 
   .container {
-    margin-top: -60px;
+    /* margin-top: -60px; */
     height: 600px;
   }
 
@@ -210,7 +210,7 @@ html {
       }
 
       .container{
-        margin-top: -60px;
+        /* margin-top: -60px;  */
         height: 600px;
         /* overflow: hidden; */
         /* border: 1px solid white; */
