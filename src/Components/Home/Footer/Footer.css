@@ -249,7 +249,7 @@ textarea:focus {
     font-size: 20px; /* Adjust font sizes */
   }
 
-  .email{
+  .email a{
     font-size: 26px;
     padding: 0rem 2rem;
   }
