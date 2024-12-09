@@ -10,7 +10,7 @@ import nomad from "../../../Videos/Nomad Video.mp4";
 import puba from "../../../Videos/Puba Video.mp4";
 
 const SliderNew = () => {
-  const [slidesToShow, setSlidesToShow] = useState(8);
+  const [slidesToShow, setSlidesToShow] = useState(7);
   const [perspective, setPerspective] = useState("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
   const boxRef = useRef(null);
 
@@ -24,7 +24,7 @@ const SliderNew = () => {
         setSlidesToShow(4);
         setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
       } else {
-        setSlidesToShow(8);
+        setSlidesToShow(6);
         setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
       }
     };
