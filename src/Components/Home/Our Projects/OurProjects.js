@@ -71,7 +71,7 @@ const OurProjects = () => {
       <div className="heading">
         <h2>Our Work</h2>
       </div>
-      <div className="shadow"></div>
+      {/* <div className="shadow"></div> */}
 
       {/* First Slider */}
       <Slider {...settings}>
