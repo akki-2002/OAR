@@ -5,6 +5,16 @@
   
 }
 
+.latest-article .slick-slider{
+  overflow: hidden;
+}
+
+.latest-article .slick-track{
+  display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .latest-article-title h2 {
   font-size: 49px; /* Reduce font size for smaller screens */
   text-align: left; /* Center the title for mobile */
@@ -34,9 +44,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 0 10px; /* Add margin for spacing on smaller screens */
+  /* margin: 0 10px;  */
   cursor: pointer;
-  height: 35rem;
+  /* height: 35rem; */
+  min-height: max-content;
 }
 
 .article-image {
@@ -115,9 +126,9 @@
     margin-bottom: 1.5rem;
   }
 
-  .article-card {
+  /* .article-card {
     margin: 0 5px;
-  }
+  } */
 
   .article-image {
     height: 15rem; /* Further reduce height */
@@ -138,9 +149,9 @@
     margin-bottom: 2rem;
   }
 
-  .article-card {
+  /* .article-card {
     margin: 0 5px;
-  }
+  } */
 
   .article-image {
     height: 12rem; /* Further reduce height for smaller phones */
