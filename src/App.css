@@ -15,6 +15,14 @@ html, body {
   /* overflow: visible; */
 }
 
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 input[type="checkbox"] {
   appearance: none; /* Removes default styling */
