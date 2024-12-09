@@ -2,17 +2,16 @@
   padding: 4rem 0.3rem 4rem 4rem; /* Adjust padding for smaller screens */
   color: white;
   font-family: "Arial", sans-serif;
-  
 }
 
-.latest-article .slick-slider{
+.latest-article .slick-slider {
   overflow: hidden;
 }
 
-.latest-article .slick-track{
+.latest-article .slick-track {
   display: flex;
-    align-items: center;
-    gap: 10px;
+  align-items: center;
+  gap: 10px;
 }
 
 .latest-article-title h2 {
@@ -44,16 +43,15 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* margin: 0 10px;  */
   cursor: pointer;
-  /* height: 35rem; */
   min-height: 35rem;
 }
- @media (max-width: 768px) {
-  .article-card{
+
+@media (max-width: 768px) {
+  .article-card {
     min-height: 20rem;
   }
- }
+}
 
 .article-image {
   width: 100%;
@@ -100,24 +98,33 @@
   color: rgb(237, 237, 237);
 }
 
-.slick-prev:before {
-  content: '';
-}
-
-/* Adjust slider controls for mobile */
-.slick-prev,
-.slick-next {
+.slick-arrow {
+  position: absolute;
+  top: 50%;
   z-index: 10;
-  border-radius: 50%;
-  height: 30px; /* Adjust size */
   width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.slick-prev::before,
-.slick-next::before {
-  font-size: 30px; /* Reduce icon size */
-  opacity: 1;
-  margin-left: -5rem;
+.slick-arrow.left {
+  left: -40px; /* Adjust the position of the left arrow */
+}
+
+.slick-arrow.right {
+  right: -40px; /* Adjust the position of the right arrow */
+}
+
+.slick-arrow:disabled {
+  display: none;
 }
 
 /* Adjust the spacing and layout for smaller screens */
@@ -130,10 +137,6 @@
     font-size: 32px;
     margin-bottom: 1.5rem;
   }
-
-  /* .article-card {
-    margin: 0 5px;
-  } */
 
   .article-image {
     height: 15rem; /* Further reduce height */
@@ -154,10 +157,6 @@
     margin-bottom: 2rem;
   }
 
-  /* .article-card {
-    margin: 0 5px;
-  } */
-
   .article-image {
     height: 12rem; /* Further reduce height for smaller phones */
   }
@@ -171,12 +170,8 @@
   }
 }
 
-
-
 .bottom-line {
-
   width: 100%; /* Slightly shorter than full width for aesthetics */
-
   height: 2px; /* Thickness of the line */
   background-color: rgb(77, 77, 77); /* Match the card border color */
   opacity: 0.7; /* Subtle appearance */
@@ -198,9 +193,16 @@
 
 
 
-
-
-
-
-
-
+.slick-arrow.left {
+  left: 15px; /* Increase the value to bring it closer to the slider */
+}
+.slick-arrow.right {
+  right: 15px;
+}
+.slick-arrow {
+  z-index: 20; /* Higher than other elements */
+}
+.slick-arrow {
+  background: rgba(0, 0, 0, 0.7); /* Ensure visible background */
+  color: white;
+}

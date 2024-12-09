@@ -50,6 +50,9 @@ function LatestArticle() {
     speed: 500,
     slidesToShow: 2.7,
     infinite: false,
+    arrows: true,
+    prevArrow: <CustomArrow direction="left" />,
+    nextArrow: <CustomArrow direction="right" />,
     responsive: [
       {
         breakpoint: 1024,
@@ -76,37 +79,55 @@ function LatestArticle() {
 
   return (
     <>
-      <div className="latest-article">
-        <div className="latest-article-title">
-          <h2>Latest Articles</h2>
-        </div>
-        <Slider {...settings} className="articles-slider">
-          {articles.map((article) => (
-            <div
-              key={article.id}
-              className="article-card"
-              onClick={() => handleNavigate(article.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <img
-                src={article.image}
-                alt={article.title}
-                className="article-image"
-              />
-              <div className="article-content">
-                <div className="article-meta">
-                  <span className="category">{article.category}</span>
-                  <span className="time">{article.timeAgo}</span>
-                </div>
-                <h3 className="article-title">{article.title}</h3>
-              </div>
-            </div>
-          ))}
-        </Slider>
+    <div className="latest-article">
+      <div className="latest-article-title">
+        <h2>Latest Articles</h2>
       </div>
+      <Slider {...settings} className="articles-slider">
+        {articles.map((article) => (
+          <div
+            key={article.id}
+            className="article-card"
+            onClick={() => handleNavigate(article.id)}
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={article.image}
+              alt={article.title}
+              className="article-image"
+            />
+            <div className="article-content">
+              <div className="article-meta">
+                <span className="category">{article.category}</span>
+                <span className="time">{article.timeAgo}</span>
+              </div>
+              <h3 className="article-title">{article.title}</h3>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    
+    </div>
       <div className="bottom-line"></div>
-    </>
+      </>
   );
 }
+
+const CustomArrow = ({ direction, onClick }) => {
+
+  return (
+    <button
+      className={`slick-arrow ${direction}`}
+      onClick={onClick}
+      style={{
+        cursor: "pointer",
+      }}
+    >
+      {direction === "left" ? "<" : ">"}
+    </button>
+  );
+};
+
+
 
 export default LatestArticle;
