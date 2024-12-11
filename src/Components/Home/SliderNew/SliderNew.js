@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../SliderNew/slidernew.css";
-import acewares from "../../../Videos/Ace Wears.mp4";
-import didwania from "../../../Videos/Didwania Video.mp4";
-import holayog from "../../../Videos/HolaYog Video.mp4";
-import nomad from "../../../Videos/Nomad Video.mp4";
-import puba from "../../../Videos/Puba Video.mp4";
+import acewares from "../../../Videos/Ace Wears video.webm";
+import didwania from "../../../Videos/Didwania Video.webm";
+import holayog from "../../../Videos/HolaYog Video.webm";
+import nomad from "../../../Videos/Nomad Video.webm";
+import puba from "../../../Videos/Puba Video.webm";
 
 const SliderNew = () => {
   const [slidesToShow, setSlidesToShow] = useState(7);
