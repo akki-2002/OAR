@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import "./Blogs.css";
 import { blogData } from "./BlogsData"; // Import the blogData
 import { Link } from "react-router-dom";
+import { FiShare2 } from "react-icons/fi"; // Import the share icon from react-icons
 
 function Blogs() {
   const { id } = useParams(); // Get the blog ID from the URL
@@ -52,14 +53,25 @@ function Blogs() {
       <div className="blog">
         <div
           className="blog-header"
+          style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between" }}
           onClick={scrollToTop}
-          style={{ cursor: "pointer" }}
         >
-          <h1>
+          <h1 style={{ flexGrow: 1 }}>
             {blog.title}
             <br />
             <span>{blog.subtitle}</span>
           </h1>
+          {/* Share Icon Button */}
+          <button
+            className="share-icon-btn"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent triggering scrollToTop when clicking the share button
+              handleShare();
+            }}
+            aria-label="Share Blog"
+          >
+            <FiShare2 size={24} />
+          </button>
         </div>
         <div className="blog-image">
           <img
@@ -98,10 +110,6 @@ function Blogs() {
           <Link to="/help-center">
             <button className="submit-btn-footer">Contact Us</button>
           </Link>
-          {/* Share Button */}
-          <button className="share-btn" onClick={handleShare}>
-            Share Blog
-          </button>
         </div>
       </div>
     </div>
