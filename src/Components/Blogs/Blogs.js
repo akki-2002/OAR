@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet"; // Import Helmet
 import "./Blogs.css";
 import { blogData } from "./BlogsData"; // Import the blogData
 import { Link } from "react-router-dom";
@@ -50,10 +51,26 @@ function Blogs() {
 
   return (
     <div className="blogs-container">
+      {/* Dynamic Metadata */}
+      <Helmet>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.subtitle} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.subtitle} />
+        <meta property="og:image" content={blog.bannerImage} />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <div className="blog">
         <div
           className="blog-header"
-          style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between" }}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
           onClick={scrollToTop}
         >
           <h1 style={{ flexGrow: 1 }}>
