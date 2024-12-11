@@ -10,7 +10,7 @@
     color: #ffffff;
     font-weight: 700;
     text-align: center; /* Center-align for better readability */
-    margin-bottom: 1rem;
+
 }
 
 .blog-header h1 span {
@@ -104,7 +104,7 @@
     }
 
     .blog-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
        
     }
 
@@ -125,7 +125,7 @@
     }
 
     .bottom-section p {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
    
@@ -191,7 +191,7 @@
     }
 
     .blog-header h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         text-align: left;
     }
 
@@ -204,6 +204,83 @@
     }
 
     .bottom-section h2 {
-        font-size: 3rem;
+        font-size: 2.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Share Icon Button */
+.share-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2rem; /* Adjust size */
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin-left: 1rem; /* Space between title and button */
+}
+
+.share-icon-btn:hover {
+    color: rgb(255, 201, 64); /* Subtle hover color */
+    transform: scale(1.4); /* Slight zoom on hover */
+}
+
+.share-icon-btn:focus {
+    outline: none;
+}
+
+
+/* Media Queries */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .share-icon-btn {
+        font-size: 1.4rem; /* Smaller icon for small devices */
+    }
+
+    .blog-header {
+        flex-direction: column; /* Stack title and share button vertically */
+        align-items: center;
+    }
+
+    .share-icon-btn {
+        margin-left: 0; /* Reset margin */
+        margin-top: 0.5rem; /* Add space above button */
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .share-icon-btn {
+        font-size: 1.6rem; /* Medium size for tablets */
+    }
+
+    .blog-header {
+        flex-direction: row; /* Title and button in a row */
+        justify-content: space-between;
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .share-icon-btn {
+        font-size: 1.8rem; /* Larger size for desktops */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .share-icon-btn {
+        font-size: 2rem; /* Default size for large devices */
     }
 }
