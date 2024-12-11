@@ -118,7 +118,6 @@
 
     .blog-content h2 {
         font-size: 1.2rem;
-        text-align: center;
     }
 
     .bottom-section h2 {
@@ -232,21 +231,14 @@
 }
 
 .share-icon-btn:hover {
-    color: #ccc; /* Subtle hover color */
-    transform: scale(1.1); /* Slight zoom on hover */
+    color: rgb(255, 201, 64); /* Subtle hover color */
+    transform: scale(1.4); /* Slight zoom on hover */
 }
 
 .share-icon-btn:focus {
     outline: none;
 }
 
-/* Align title and share button */
-.blog-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensure proper spacing */
-    gap: 1rem; /* Space between elements */
-}
 
 /* Media Queries */
 
