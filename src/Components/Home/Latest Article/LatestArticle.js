@@ -6,6 +6,9 @@ import blog2 from "../../../Images/blog3.png";
 import blog3 from "../../../Images/blog5.png";
 import blog4 from "../../../Images/blog7.png";
 import blog5 from "../../../Images/blog9.png";
+import blog6 from "../../../Images/blog11.png";
+import blog7 from "../../../Images/blog13.png";
+import blog8 from "../../../Images/blog13.png";
 
 function LatestArticle() {
   const articles = [
@@ -42,6 +45,27 @@ function LatestArticle() {
       image: blog5,
       category: "BUSINESS",
       title: "Drive More Traffic to Your Resort with These SEO Tips",
+      timeAgo: "8 hours ago",
+    },
+    {
+      id: 6,
+      image: blog6,
+      category: "BUSINESS",
+      title: "How to Build a High-Converting E-Commerce Website",
+      timeAgo: "8 hours ago",
+    },
+    {
+      id: 7,
+      image: blog7,
+      category: "BUSINESS",
+      title: "Why High-Quality Web Design Matters for Your Brand",
+      timeAgo: "8 hours ago",
+    },
+    {
+      id: 8,
+      image: blog8,
+      category: "BUSINESS",
+      title: "The Role of Branding in Building Customer Loyalty",
       timeAgo: "8 hours ago",
     },
   ];
