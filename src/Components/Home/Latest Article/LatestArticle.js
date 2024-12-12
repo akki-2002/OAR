@@ -8,7 +8,7 @@ import blog4 from "../../../Images/blog7.png";
 import blog5 from "../../../Images/blog9.png";
 import blog6 from "../../../Images/blog11.png";
 import blog7 from "../../../Images/blog13.png";
-import blog8 from "../../../Images/blog13.png";
+import blog8 from "../../../Images/blog15.png";
 
 function LatestArticle() {
   const articles = [
