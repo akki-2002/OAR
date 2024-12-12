@@ -55,7 +55,7 @@ function OurWorks() {
         observer.unobserve(containerRef.current);
       }
     };
-  }, [styles]);
+  }, []);
 
   return (
     <div ref={containerRef} className="our-works-container">

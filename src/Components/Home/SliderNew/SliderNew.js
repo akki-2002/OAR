@@ -8,6 +8,11 @@ import didwania from "../../../Videos/Didwania Video.webm";
 import holayog from "../../../Videos/HolaYog Video.webm";
 import nomad from "../../../Videos/Nomad Video.webm";
 import puba from "../../../Videos/Puba Video.webm";
+import acewaresImg from "../../../Images/Ace Wears video.png";
+import didwaniaImg from "../../../Images/Didwania Video.png";
+import holayogImg from "../../../Images/HolaYog Video.png";
+import nomadImg from "../../../Images/Nomad Video.png";
+import pubaImg from "../../../Images/Puba Video.png";
 
 const SliderNew = () => {
   const [slidesToShow, setSlidesToShow] = useState(7);
@@ -71,7 +76,19 @@ const SliderNew = () => {
     draggable: true, // Allows drag to slide on desktop and mobile
   };
 
+  const [iww, setIww] = useState(false)
+
+  useEffect(()=>{
+    if(window.innerWidth < 425)
+    {
+      setIww(true)
+    }else{
+      setIww(false)
+    }
+  },[iww])
+
   const videos = [acewares, didwania, holayog, nomad, puba, acewares, didwania, holayog, nomad, puba];
+  const images = [acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg, acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg];
 
   return (
     <>
@@ -84,21 +101,36 @@ const SliderNew = () => {
           <div className="boxInner">
             
           </div>
+
+          {!iww ? 
           <Slider {...settings}>
-            {videos.map((video, index) => {
-              return (
-                <div key={index}>
-                  <video
-                    src={video}
-                    style={{ width: "100%" }}
-                    autoPlay
-                    muted
-                    loop
-                  ></video>
-                </div>
-              );
-            })}
-          </Slider>
+          {videos.map((video, index) => {
+            return (
+              <div key={index}>
+                <video
+                  src={video}
+                  style={{ width: "100%" }}
+                  autoPlay
+                  muted
+                  loop
+                ></video>
+              </div>
+            );
+          })}
+        </Slider>
+          : 
+          <Slider {...settings}>
+          {images.map((image, index) => {
+            return (
+              <div key={index}>
+                <img src={image} alt="" style={{ width: "100%" }}/>
+              </div>
+            );
+          })}
+        </Slider>
+          }
+          
+         
         </div>
       </div>
     </>
