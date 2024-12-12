@@ -98,7 +98,7 @@ gap: 10px;
 }
 
 .menu-links a {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   width: 100%;
   color: #ffffff;
@@ -334,5 +334,54 @@ gap: 10px;
 @media (min-width: 1025px) {
   .close-button {
     display: none;
+  }
+}
+
+
+
+
+@media (min-width: 2056px) {
+  .navbar {
+    padding: 16px 48px; /* Increase padding for larger screens */
+  }
+
+  .navbar-logo .logo-bold {
+    font-size: 48px; /* Increase font size for the logo */
+  }
+
+  .navbar-logo .studios {
+    font-size: 42px; /* Increase font size for the subtitle */
+  }
+
+  .hamburger img {
+    width: 120px; /* Resize the hamburger icon */
+    height: 60px;
+  }
+
+  .menu-overlay {
+    width: 40%; /* Reduce width for a better layout on large screens */
+  }
+
+  .menu-links a {
+    font-size: 100px; /* Increase font size for better visibility */
+    line-height: 1em;
+  }
+
+  .arrow-down {
+    width: 50px; /* Increase arrow size */
+    height: 50px;
+  }
+
+  .menu-links a:hover {
+    font-size: 120px; /* Make hover effect more prominent */
+  }
+
+  .menu-links li {
+    margin: 40px 0; /* Increase spacing between menu items */
+  }
+
+  .close-button img {
+    width: 60px; /* Larger close button for big screens */
+    height: 60px;
   }
 }

@@ -250,3 +250,19 @@ html, body {
     height: 100vh;
   }
 }
+
+
+
+
+@media (min-width: 2056px){
+  .innovative-designs {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 500;
+    font-size: 120px;
+  }
+  .seamless-solutions {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 92px;
+  }
+}
