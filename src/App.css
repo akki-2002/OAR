@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+body{
+  /* cursor: pointer !important; */
+}
+
 html, body {
   /* height: auto; */
   /* overflow: visible; */
@@ -21,6 +25,10 @@ body::-webkit-scrollbar {
 
 html {
   scroll-behavior: smooth;
+}
+
+.allComps{
+  position: relative;
 }
 
 
