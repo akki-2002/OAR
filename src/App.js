@@ -94,18 +94,18 @@ function App() {
           />
 
           {/* Dynamic route for project details */}
-          <Route path="/our-works/:id" element={<OurWorksDetail />} />
+          <Route path="/our-works/:id" element={!loading && <OurWorksDetail />} />
 
           {/* Dynamic route for blogs */}
-          <Route path="/blogs/:id" element={<Blogs />} />
+          <Route path="/blogs/:id" element={!loading && <Blogs />} />
         </Routes>
 
         {/* Footer */}
         <div className="footer-wrapper">
           <div id="contact">
-            <Footer />
+           {!loading &&  <Footer />}
           </div>
-          <FooterMain />
+          {!loading && <FooterMain />}
         </div>
       </Router>
     </div>
