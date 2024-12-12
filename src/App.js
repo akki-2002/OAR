@@ -44,18 +44,20 @@ function App() {
   }, []);
   return (
     <>
-    {loading ? (
-        <Loader /> // Show loader when loading
-      ) : (
+    
 <div className="scroll-container">
       <Router>
         <Navbar />
         <Routes>
           {/* Home Page */}
+          
           <Route
             path="/"
             element={
-              <>
+              loading ? (
+                <Loader/>
+              ):(
+                <>
                 <div id="slider">
                   <SliderNew />
                 </div>
@@ -75,6 +77,8 @@ function App() {
                   <FAQ />
                 </div>
               </>
+              )
+              
             }
           />
 
@@ -94,7 +98,7 @@ function App() {
         </div>
       </Router>
     </div>
-      )}
+     
     </>
     
   );
