@@ -16,6 +16,9 @@ import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
 import Loader from './Components/Loader';
 
+import { Player } from 'lottie-react';
+import flow from './Videos/Flow 1.json'
+
 function App() {
   useEffect(()=>{
     window.scrollTo({

@@ -99,6 +99,10 @@ html {
   background-color: transparent;
 }
 
+.box .slick-slide img{
+  height: 100%;
+}
+
 .box .slick-slide video {
   object-fit: cover;
   aspect-ratio: 3/4;
