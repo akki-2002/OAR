@@ -36,8 +36,28 @@
 }
 
 .hamburger {
-  cursor: pointer;
+  cursor: none;
+  /* border: 1px solid white; */
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
 }
+
+.hamburger div{
+  width: 100px;
+  height: 2px;
+  background-color: white;
+  transition:all 0.1s ease-in-out;
+}
+
+.hamburger:hover div:nth-child(2)
+{
+  width: 70px;
+}
+
+
 
 .hamburger img {
   width: 88px;

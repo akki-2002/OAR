@@ -16,6 +16,10 @@ import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
 import Loader from './Components/Loader';
 
+import { Player } from 'lottie-react';
+import flow from './Videos/Flow 1.json'
+import Cursor from './Components/Cursor';
+
 function App() {
   useEffect(()=>{
     window.scrollTo({
@@ -39,20 +43,32 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleMouseEnter = () => {
+    document.querySelector('.custom-cursor').classList.add('hovered');
+  };
+
+  const handleMouseLeave = () => {
+    document.querySelector('.custom-cursor').classList.remove('hovered');
+  };
   return (
-    <>
-    {loading ? (
-        <Loader /> // Show loader when loading
-      ) : (
+    <div className='allComps'>
+    
+        {/* <Cursor/> */}
 <div className="scroll-container">
       <Router>
-        <Navbar />
+        {!loading && <Navbar />}
+        
         <Routes>
           {/* Home Page */}
+          
           <Route
             path="/"
             element={
-              <>
+              loading ? (
+                <Loader/>
+              ):(
+                <>
                 <div id="slider">
                   <SliderNew />
                 </div>
@@ -72,6 +88,8 @@ function App() {
                   <FAQ />
                 </div>
               </>
+              )
+              
             }
           />
 
@@ -91,8 +109,8 @@ function App() {
         </div>
       </Router>
     </div>
-      )}
-    </>
+     
+    </div>
     
   );
 }
