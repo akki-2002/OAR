@@ -18,6 +18,7 @@ import Loader from './Components/Loader';
 
 import { Player } from 'lottie-react';
 import flow from './Videos/Flow 1.json'
+import Cursor from './Components/Cursor';
 
 function App() {
   useEffect(()=>{
@@ -42,12 +43,22 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleMouseEnter = () => {
+    document.querySelector('.custom-cursor').classList.add('hovered');
+  };
+
+  const handleMouseLeave = () => {
+    document.querySelector('.custom-cursor').classList.remove('hovered');
+  };
   return (
-    <>
+    <div className='allComps'>
     
+        {/* <Cursor/> */}
 <div className="scroll-container">
       <Router>
-        <Navbar />
+        {!loading && <Navbar />}
+        
         <Routes>
           {/* Home Page */}
           
@@ -99,7 +110,7 @@ function App() {
       </Router>
     </div>
      
-    </>
+    </div>
     
   );
 }

@@ -41,7 +41,10 @@ const Navbar = () => {
         <span className="logo-bold">OAR</span> <span className="studios">STUDIOS</span>
       </Link>
       <div className="hamburger" onClick={toggleMenu}>
-        <img src={HamburgerIcon} alt="menu" />
+        {/* <img src={HamburgerIcon} alt="menu" /> */}
+        <div className="l1"></div>
+    <div className="l2"></div>
+    <div className="l3"></div>
       </div>
 
       <div
@@ -51,6 +54,7 @@ const Navbar = () => {
 >
 <button className="close-button" onClick={closeMenu}>
     <img src={closeIcon} alt="Close Menu" />
+    
   </button>
   <nav>
     <ul className="menu-links">
