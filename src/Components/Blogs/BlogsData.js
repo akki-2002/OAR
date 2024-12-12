@@ -13,6 +13,8 @@ import img11 from "../../Images/blog11.png";
 import img12 from "../../Images/blog12.png";
 import img13 from "../../Images/blog13.png";
 import img14 from "../../Images/blog14.png";
+import img15 from "../../Images/blog15.png";
+import img16 from "../../Images/blog16.png";
 
 export const blogData = [
     {
@@ -687,7 +689,7 @@ export const blogData = [
         },
         {
           type: "text",
-          value: `Your website’s design should prioritize ease of navigation and intuitive use.
+          value: `Your website’s design should prioritize ease of navigation and intuitive use. 
   Clean Layout: Use a simple, uncluttered design that highlights products and calls to action (CTAs).
   Easy Navigation: Ensure the menu is easy to locate, with clear categories and filters to help users find products quickly.
   Responsive Design: Optimize your site for all devices, especially mobile, as a significant portion of e-commerce traffic comes from smartphones.
@@ -1021,7 +1023,7 @@ export const blogData = [
       id: 8,
       title: "The Role of Branding in Building Customer Loyalty",
       subtitle: "",
-      bannerImage: img13,
+      bannerImage: img15,
       content: [
         {
           type: "text",
@@ -1035,6 +1037,11 @@ export const blogData = [
     
     `,
         },
+
+        {
+          type: "image",
+          value: img16, // Add new image after point 4
+        },
   
         {
           type: "text",
@@ -1044,14 +1051,7 @@ export const blogData = [
     
     `,
         },
-        {
-          type: "text",
-          value: `A well-designed website prioritizes user experience, ensuring visitors can easily navigate and find what they’re looking for. Features like intuitive menus, fast-loading pages, and mobile-friendly design make your site more accessible and enjoyable, leading to higher engagement and lower bounce rates.
-  
-  
-    
-    `,
-        },
+        
        
         {
           type: "text",
