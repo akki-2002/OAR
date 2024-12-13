@@ -53,14 +53,21 @@ function Blogs() {
     <div className="blogs-container">
       {/* Dynamic Metadata */}
       <Helmet>
-        <title>{blog.title}</title>
-        <meta name="description" content={blog.subtitle} />
-        <meta property="og:title" content={blog.title} />
-        <meta property="og:description" content={blog.subtitle} />
-        <meta property="og:image" content={blog.bannerImage} />
-        <meta property="og:url" content={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+  <title>{blog.title}</title>
+  <meta name="description" content={blog.subtitle} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={blog.title} />
+  <meta property="og:description" content={blog.subtitle} />
+  <meta property="og:image" content={blog.bannerImage} />
+  <meta property="og:url" content={`https://www.oarstudios.in/blogs/${blog.id}`} />
+  <meta property="og:site_name" content="OAR Studios" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={blog.title} />
+  <meta name="twitter:description" content={blog.subtitle} />
+  <meta name="twitter:image" content={blog.bannerImage} />
+  <link rel="canonical" href={`https://www.oarstudios.in/blogs/${blog.id}`} />
+</Helmet>
+
 
       <div className="blog">
         <div
