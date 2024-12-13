@@ -1,34 +1,25 @@
 import React, { useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet"; // Import Helmet
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet"; // Import Helmet for metadata
 import "./Blogs.css";
-import { blogData } from "./BlogsData"; // Import the blogData
-import { Link } from "react-router-dom";
-import { FiShare2 } from "react-icons/fi"; // Import the share icon from react-icons
+import { blogData } from "./BlogsData"; // Import the blog data
+import { FiShare2 } from "react-icons/fi"; // Share icon from react-icons
 
 function Blogs() {
   const { id } = useParams(); // Get the blog ID from the URL
-  const location = useLocation();
 
   useEffect(() => {
     const scrollContainer = document.querySelector(".scroll-container");
     if (scrollContainer) {
       scrollContainer.scrollTo(0, 0);
     }
-  }, [id, location]);
+  }, [id]);
 
   const blog = blogData.find((b) => b.id === parseInt(id)); // Find the specific blog by ID
 
   if (!blog) {
-    return <div>Blog not found!</div>; // Handle case where blog does not exist
+    return <div>Blog not found!</div>; // Handle case where the blog does not exist
   }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   const handleShare = () => {
     const blogUrl = window.location.href;
@@ -44,7 +35,7 @@ function Blogs() {
         .then(() => console.log("Blog shared successfully!"))
         .catch((err) => console.error("Error sharing blog:", err));
     } else {
-      // Fallback for non-supporting browsers
+      // Fallback for browsers that don't support Web Share API
       alert("Web Share API is not supported in this browser.");
     }
   };
@@ -63,29 +54,16 @@ function Blogs() {
       </Helmet>
 
       <div className="blog">
-        <div
-          className="blog-header"
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-          onClick={scrollToTop}
-        >
-          <h1 style={{ flexGrow: 1 }}>
-            {blog.title}
-            <br />
-            <span>{blog.subtitle}</span>
-          </h1>
-          {/* Share Icon Button */}
+        <div className="blog-header">
+          <h1>{blog.title}</h1>
+          <span>{blog.subtitle}</span>
+          {/* Share Button */}
           <button
             className="share-icon-btn"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent triggering scrollToTop when clicking the share button
+              e.stopPropagation();
               handleShare();
             }}
-            aria-label="Share Blog"
           >
             <FiShare2 size={24} />
           </button>
@@ -94,20 +72,19 @@ function Blogs() {
           <img
             src={blog.bannerImage}
             alt={`${blog.title} banner`}
-            onClick={scrollToTop}
-            style={{ cursor: "pointer" }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
         </div>
         <div className="blog-content">
           {blog.content.map((item, index) => {
             switch (item.type) {
               case "text":
-                return <p key={index} className="blog-text">{item.value}</p>;
+                return <p key={index}>{item.value}</p>;
               case "header":
-                return <h2 key={index} className="blog-header">{item.value}</h2>;
+                return <h2 key={index}>{item.value}</h2>;
               case "image":
                 return (
-                  <div key={index} className="content-image">
+                  <div key={index}>
                     <img src={item.value} alt="Blog content" />
                   </div>
                 );
@@ -117,16 +94,14 @@ function Blogs() {
           })}
         </div>
         <div className="bottom-section">
-          <h2
-            dangerouslySetInnerHTML={{ __html: blog.bottomSection.heading }}
-          ></h2>
+          <h2>{blog.bottomSection.heading}</h2>
           <p>
-            Get a free consultation today, get on a call with our industry
+            Get a free consultation today, and get on a call with our industry
             experts to skyrocket your business growth.
           </p>
-          <Link to="/help-center">
-            <button className="submit-btn-footer">Contact Us</button>
-          </Link>
+          <a href="/help-center" className="submit-btn-footer">
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
