@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet"; // Import Helmet
+import { Helmet } from "react-helmet";
 import "./Blogs.css";
-import { blogData } from "./BlogsData"; // Import the blogData
+import { blogData } from "./BlogsData";
 import { Link } from "react-router-dom";
-import { FiShare2 } from "react-icons/fi"; // Import the share icon from react-icons
+import { FiShare2 } from "react-icons/fi";
 
 function Blogs() {
-  const { id } = useParams(); // Get the blog ID from the URL
+  const { id } = useParams();
   const location = useLocation();
 
   useEffect(() => {
@@ -17,23 +17,15 @@ function Blogs() {
     }
   }, [id, location]);
 
-  const blog = blogData.find((b) => b.id === parseInt(id)); // Find the specific blog by ID
+  const blog = blogData.find((b) => b.id === parseInt(id));
 
   if (!blog) {
-    return <div>Blog not found!</div>; // Handle case where blog does not exist
+    return <div>Blog not found!</div>;
   }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   const handleShare = () => {
     const blogUrl = window.location.href;
 
-    // Check if Web Share API is supported
     if (navigator.share) {
       navigator
         .share({
@@ -44,7 +36,6 @@ function Blogs() {
         .then(() => console.log("Blog shared successfully!"))
         .catch((err) => console.error("Error sharing blog:", err));
     } else {
-      // Fallback for non-supporting browsers
       alert("Web Share API is not supported in this browser.");
     }
   };
@@ -53,34 +44,30 @@ function Blogs() {
     <div className="blogs-container">
       {/* Dynamic Metadata */}
       <Helmet>
-  <title>{blog.title}</title>
-  <meta name="description" content={blog.subtitle} />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={blog.title} />
-  <meta property="og:description" content={blog.subtitle} />
-  <meta property="og:image" content={blog.bannerImage} />
-  <meta property="og:url" content={`https://www.oarstudios.in/blogs/${blog.id}`} />
-  <meta property="og:site_name" content="OAR Studios" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={blog.title} />
-  <meta name="twitter:description" content={blog.subtitle} />
-  <meta name="twitter:image" content={blog.bannerImage} />
-  <link rel="canonical" href={`https://www.oarstudios.in/blogs/${blog.id}`} />
-</Helmet>
-
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.subtitle} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.subtitle} />
+        <meta property="og:image" content={blog.bannerImage} />
+        <meta
+          property="og:url"
+          content={`https://www.oarstudios.in/blogs/${blog.id}`}
+        />
+        <meta property="og:site_name" content="OAR Studios" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.subtitle} />
+        <meta name="twitter:image" content={blog.bannerImage} />
+        <link
+          rel="canonical"
+          href={`https://www.oarstudios.in/blogs/${blog.id}`}
+        />
+      </Helmet>
 
       <div className="blog">
-        <div
-          className="blog-header"
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-          onClick={scrollToTop}
-        >
-          <h1 style={{ flexGrow: 1 }}>
+        <div className="blog-header">
+          <h1>
             {blog.title}
             <br />
             <span>{blog.subtitle}</span>
@@ -89,7 +76,7 @@ function Blogs() {
           <button
             className="share-icon-btn"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent triggering scrollToTop when clicking the share button
+              e.stopPropagation(); // Prevent triggering any parent click events
               handleShare();
             }}
             aria-label="Share Blog"
@@ -101,17 +88,24 @@ function Blogs() {
           <img
             src={blog.bannerImage}
             alt={`${blog.title} banner`}
-            onClick={scrollToTop}
-            style={{ cursor: "pointer" }}
+            className="blog-banner"
           />
         </div>
         <div className="blog-content">
           {blog.content.map((item, index) => {
             switch (item.type) {
               case "text":
-                return <p key={index} className="blog-text">{item.value}</p>;
+                return (
+                  <p key={index} className="blog-text">
+                    {item.value}
+                  </p>
+                );
               case "header":
-                return <h2 key={index} className="blog-header">{item.value}</h2>;
+                return (
+                  <h2 key={index} className="blog-header">
+                    {item.value}
+                  </h2>
+                );
               case "image":
                 return (
                   <div key={index} className="content-image">
