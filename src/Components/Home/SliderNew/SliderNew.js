@@ -47,14 +47,14 @@ const SliderNew = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
-      console.log(boxRef)
+      // console.log(boxRef)
       if (boxRef.current) {
         boxRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    console.log(boxRef)
+    // console.log(boxRef)
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
