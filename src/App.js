@@ -15,6 +15,7 @@ import OurWorksDetail from './Components/Our Works Detail/OurWorksDetail';
 import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
 import Loader from './Components/Loader';
+import ScrollToTop from './Components/ScrollToTop';
 
 import { Player } from 'lottie-react';
 import flow from './Videos/Flow 1.json'
@@ -57,6 +58,7 @@ function App() {
         {/* <Cursor/> */}
 <div className="scroll-container">
       <Router>
+      <ScrollToTop /> 
         {!loading && <Navbar />}
         
         <Routes>

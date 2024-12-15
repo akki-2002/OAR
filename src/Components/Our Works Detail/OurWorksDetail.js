@@ -36,7 +36,7 @@ const worksData = [
     title: "Nomad Interiors Web Design",
     name: "NOMAD",
     category: "WEB DESIGN",
-    imgSrc: require("../../Images/Puba (1).webp"),
+    imgSrc: require("../../Images/Nomad Interiors.webp"),
   },
 ];
 
