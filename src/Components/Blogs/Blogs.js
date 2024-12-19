@@ -44,6 +44,7 @@ function Blogs() {
     <div className="blogs-container">
       {/* Dynamic Metadata */}
       <Helmet>
+      <meta name="robots" content="index, follow" />
         <title>{blog.title}</title>
         <meta name="description" content={blog.subtitle} />
         <meta property="og:type" content="article" />
