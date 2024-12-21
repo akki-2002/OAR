@@ -1,87 +1,100 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Instrument+Serif:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gajraj+One&family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
-*{
-  background-color: #141414;
+
+/* Global Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: #141414; /* Dark background */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
-body{
-  /* cursor: pointer !important; */
+body {
+  font-family: 'Gajraj One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 html, body {
-  /* height: auto; */
-  /* overflow: visible; */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
 }
 
 body::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  display: none; /* Hide scrollbar in Chrome, Safari, Edge */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.allComps{
-  position: relative;
-}
-
-
-input[type="checkbox"] {
-  appearance: none; /* Removes default styling */
-  width: 25px;
-  height: 25px;
-  border: 2px solid rgb(40,40,40); /* Box border */
-  border-radius: 5px;
-  background-color: transparent; /* Box color */
-  cursor: pointer;
-  padding: 0;
-}
-
-input[type="checkbox"]:checked {
-  background-color: transparent; /* Background when checked */
-  border: 2px solid rgb(40,40,40);
-  border-radius: 5px;
-
-  padding: 0;
-}
-
-input[type="checkbox"]:checked::before {
-
-  content: '✔'; /* Checkmark */
-  color: #eab114; /* Checkmark color */
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-
-.footer-wrapper {
-  display: flex;
-  flex-direction: column; /* Stack the components vertically */
-  width: 100%;
-  border-top: 1px solid rgb(40, 40, 40); /* Ensure consistent border */
-}
-
+/* Scroll Container */
 .scroll-container {
-  /* overflow-y: auto; */
-  height: 100vh; /* Adjust height as needed */
-  scrollbar-width: none; /* Hides scrollbar for Firefox */
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* Hides scrollbar for WebKit-based browsers */
+  display: none; /* Hide scrollbar in WebKit browsers */
 }
 
-#work{
-  /* position: absolute; */
+/* Checkbox Styling */
+input[type="checkbox"] {
+  -webkit-appearance: none; /* Remove default styling for Safari and iOS */
+  -moz-appearance: none; /* Remove default styling for Firefox */
+  appearance: none; /* Remove default styling for modern browsers */
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(40,40,40);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: transparent;
+  border: 2px solid rgb(40,40,40);
+}
+
+input[type="checkbox"]:checked::before {
+  content: '✔';
+  color: #eab114;
+  font-size: 16px;
+  line-height: 25px; /* Center checkmark vertically */
+  display: inline-block;
+  text-align: center;
+}
+
+/* Footer Styling */
+.footer-wrapper {
+  display: -webkit-flex; /* Safari Flexbox compatibility */
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  width: 100%;
+  border-top: 1px solid rgb(40, 40, 40);
+}
+
+/* Positioning and Scroll Behavior */
+.allComps {
+  position: relative;
+}
+
+#work {
   top: 0;
   z-index: 10;
+}
+
+/* Mobile-Friendly Input Field Styling */
+input, textarea, button {
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+  outline: none;
+}
+
+/* Other Styles */
+html {
+  font-size: 16px; /* Base font size for better scaling */
 }
