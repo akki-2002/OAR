@@ -1,10 +1,17 @@
-.footer-container {
-  display: flex;
-  flex-direction: row; /* Default to row layout */
-
-  width: 100%; /* Ensure full width */
+/* General Reset for iOS and Cross-Browser */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html, body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+}
 .footer-left {
   width: 25%; /* Default width for larger screens */
   padding: 6rem 3rem;
@@ -132,83 +139,42 @@ input[type="checkbox"] {
 }
 
 input[type="text"],
-input[type="email"] {
-  border: none;
-  border-bottom: 1px solid rgb(40, 40, 40);
-  background-color: transparent;
-  padding: 8px;
-  font-size: 16px;
-  color: #edeae4;
-  font-family: "Montserrat", sans-serif;
-  outline: none;
-  margin-bottom: 3rem;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus {
-  border-bottom: 2px solid #edeae4;
-}
-
+input[type="email"],
 textarea {
+  -webkit-appearance: none; /* Reset default iOS styles */
+  border-radius: 0; /* Disable rounded corners on iOS */
+}
+
+button {
+  -webkit-appearance: none;
   border: none;
-  border-bottom: 1px solid rgb(40, 40, 40);
-  background-color: transparent;
-  width: 100%;
-  resize: none;
-  color: #edeae4;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Add Focus States for Accessibility */
+input:focus, textarea:focus {
   outline: none;
-  margin-top: 2rem;
+  border-bottom: 2px solid #edeae4; /* Custom focus style */
 }
-
-textarea:focus {
-  border-bottom: 2px solid #edeae4;
-}
-
-.msgg {
-  font-family: "Montserrat", sans-serif;
-  font-size: 24px;
-  margin-top: 1rem;
-  color: #edeae4;
-}
-
-.submit-container {
-  display: flex;
-  justify-content: center; /* Horizontally center the button */
-  margin-top: 2rem; /* Add space between form fields and button */
-}
-
 
 .submit-btn-footer {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  margin-top: 1rem;
-  cursor: pointer;
-  border: 1px solid rgba(255, 201, 64, 0.37);
-  background: linear-gradient(14deg, rgb(255, 201, 64) 0%, rgba(0, 0, 0, 0.22) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent; /* Fallback if gradient isn't supported */
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  background-clip: text;
-  text-fill-color: transparent; /* Extra layer for better compatibility */
-  text-align: center;
-  font-weight: 500;
-  transition: all 0.3s ease; /* Smooth transition */
+  touch-action: manipulation; /* Improve touch interactions */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
-.submit-btn-footer:hover {
-  background: none; /* Remove gradient on hover */
-  -webkit-background-clip: border-box; /* Reset background clip */
-  -webkit-text-fill-color: rgb(255, 201, 64); /* Solid color on hover */
-  color: rgb(255, 201, 64); /* Fallback for non-webkit browsers */
-  border: 1px solid rgba(255, 201, 64);
+/* Flexbox Fallback for iOS Safari */
+.footer-container {
+  display: -webkit-box; /* Old iOS Safari */
+  display: -webkit-flex; /* Newer iOS Safari */
+  display: flex; /* Standard */
 }
 
-
+.footer-left {
+  -webkit-box-flex: 0; /* Old iOS Safari */
+  -webkit-flex: 0 0 25%; /* Newer iOS Safari */
+  flex: 0 0 25%;
+}
 
 /* Responsive Styles */
 @media (max-width: 1024px){
@@ -216,79 +182,27 @@ textarea:focus {
     font-size: 55px;
   }
 }
+
+/* Improve Responsiveness */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column; /* Stack items vertically */
-    flex-wrap: wrap;
-  }
-
-  .services-checkboxes {
-    margin: 1.5rem 0rem 2.5rem 0rem;
-    display: flex;
-    align-items: flex-start;
+    -webkit-box-orient: vertical; /* Old iOS Safari */
+    -webkit-box-direction: normal; /* Old iOS Safari */
+    -webkit-flex-direction: column; /* Newer iOS Safari */
     flex-direction: column;
-    
   }
-
-  .services-checkboxes label{
-    padding-bottom: 0.5rem;
-  }
-
-  .footer-left,
-  .footer-right {
-    width: 100%; /* Make each section take full width */
-    padding: 0px;
-    border-right: none; /* Remove border for smaller screens */
-  }
-
-  .footer-left h2 {
-    font-size: 50px; /* Adjust font size for smaller screens */
-    padding: 2.5rem 2rem;
-  }
-
-  .footer-right-header{
-    padding: 2rem 2rem 1rem 2rem;
-  }
-
-  .footer-right h3 {
-    font-size: 20px; /* Adjust font sizes */
-  }
-
-  .email a{
-    font-size: 24px;
-    padding: 0rem 2rem;
-  }
-
-  .copy-email{
-    font-size: 15px;
-  }
-
-  .copy-email-container img {
-    width: 16px;
 }
 
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    margin-bottom: 2rem; /* Adjust spacing for inputs */
-  }
+/* Button Active State */
+.submit-btn-footer:active {
+  background-color: rgba(255, 201, 64, 0.1);
+  border: 1px solid rgba(255, 201, 64, 0.5);
+}
 
-
-  .msgg{
-    display: block;
-    width: 95%;
-  }
-
-  form{
-    padding: 2rem;
-  }
-
+/* Font and Button Accessibility */
+@media (prefers-reduced-motion: reduce) {
   .submit-btn-footer {
-    font-size: 24px; /* Adjust font size for smaller screens */
-    padding: 0.8rem 1.5rem; /* Adjust padding for better fit */
-    border-radius: 10px; /* Slightly smaller radius */
-    margin-top: 1rem; /* Ensure spacing from other elements */
-    align-self: center; /* Center the button within the form */
+    transition: none; /* Remove animations for accessibility */
   }
 }
 
