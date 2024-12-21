@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "./LatestArticle.css";
 import blog1 from "../../../Images/blog2.png";
@@ -11,6 +11,8 @@ import blog7 from "../../../Images/blog13.png";
 import blog8 from "../../../Images/blog15.png";
 
 function LatestArticle() {
+  const [isDragging, setIsDragging] = useState(false);
+
   const articles = [
     {
       id: 1,
@@ -95,50 +97,53 @@ function LatestArticle() {
         settings: { slidesToShow: 1 },
       },
     ],
+    beforeChange: () => setIsDragging(true),
+    afterChange: () => setIsDragging(false),
   };
 
   const handleNavigate = (id) => {
-    window.location.href = `/blogs/${id}`;
+    if (!isDragging) {
+      window.location.href = `/blogs/${id}`;
+    }
   };
 
   return (
     <>
-    <div className="latest-article">
-      <div className="latest-article-title">
-        <h2>Latest Articles</h2>
-      </div>
-      <Slider {...settings} className="articles-slider">
-        {articles.map((article) => (
-          <div
-            key={article.id}
-            className="article-card"
-            onClick={() => handleNavigate(article.id)}
-            style={{ cursor: "pointer" }}
-          >
-            <img
-              src={article.image}
-              alt={article.title}
-              className="article-image"
-            />
-            <div className="article-content">
-              <div className="article-meta">
-                <span className="category">{article.category}</span>
-                <span className="time">{article.timeAgo}</span>
+      <div className="latest-article">
+        <div className="latest-article-title">
+          <h2>Latest Articles</h2>
+        </div>
+        <Slider {...settings} className="articles-slider">
+          {articles.map((article) => (
+            <div
+              key={article.id}
+              className="article-card"
+              onMouseDown={() => setIsDragging(false)}
+              onClick={() => handleNavigate(article.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                src={article.image}
+                alt={article.title}
+                className="article-image"
+              />
+              <div className="article-content">
+                <div className="article-meta">
+                  <span className="category">{article.category}</span>
+                  <span className="time">{article.timeAgo}</span>
+                </div>
+                <h3 className="article-title">{article.title}</h3>
               </div>
-              <h3 className="article-title">{article.title}</h3>
             </div>
-          </div>
-        ))}
-      </Slider>
-    
-    </div>
+          ))}
+        </Slider>
+      </div>
       <div className="bottom-line"></div>
-      </>
+    </>
   );
 }
 
 const CustomArrow = ({ direction, onClick }) => {
-
   return (
     <button
       className={`slick-arrow ${direction}`}
@@ -151,7 +156,5 @@ const CustomArrow = ({ direction, onClick }) => {
     </button>
   );
 };
-
-
 
 export default LatestArticle;

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import './OurWorksDetail.css';
+import React, { useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import "./OurWorksDetail.css";
 
 const worksData = [
   {
@@ -36,7 +36,7 @@ const worksData = [
     title: "Nomad Interiors Web Design",
     name: "NOMAD",
     category: "WEB DESIGN",
-    imgSrc: require("../../Images/Puba (1).webp"),
+    imgSrc: require("../../Images/Nomad Interiors.webp"),
   },
 ];
 
@@ -57,13 +57,6 @@ function OurWorksDetail() {
     return <div>Work not found!</div>;
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="works-container">
       <div className="works-navbar">
@@ -71,10 +64,10 @@ function OurWorksDetail() {
         <div className="works-line"></div>
         <span className="works-right-text">{work.category}</span>
       </div>
-      <div className="works-main-content" onClick={scrollToTop}>
+      <div className="works-main-content">
         <h1 className="works-title">{work.title}</h1>
       </div>
-      <div className="works-image-container" onClick={scrollToTop}>
+      <div className="works-image-container">
         <img src={work.imgSrc} alt={work.title} className="works-image" />
       </div>
       <div className="works-content">

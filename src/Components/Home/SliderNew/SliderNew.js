@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../SliderNew/slidernew.css";
-import acewares from "../../../Videos/Ace Wears video.webm";
-import didwania from "../../../Videos/Didwania Video.webm";
-import holayog from "../../../Videos/HolaYog Video.webm";
-import nomad from "../../../Videos/Nomad Video.webm";
-import puba from "../../../Videos/Puba Video.webm";
+import acewares from "../../../Videos/AceWearsvideo.webm";
+import didwania from "../../../Videos/DidwaniaVideo.webm";
+import holayog from "../../../Videos/HolaYogVideo.webm";
+import nomad from "../../../Videos/NomadVideo.webm";
+import puba from "../../../Videos/PubaVideo.webm";
 import acewaresImg from "../../../Images/Ace Wears video.png";
 import didwaniaImg from "../../../Images/Didwania Video.png";
 import holayogImg from "../../../Images/HolaYog Video.png";
@@ -47,14 +47,14 @@ const SliderNew = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
-      console.log(boxRef)
+      // console.log(boxRef)
       if (boxRef.current) {
         boxRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    console.log(boxRef)
+    // console.log(boxRef)
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

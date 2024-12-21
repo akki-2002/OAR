@@ -55,7 +55,7 @@ const Footer = () => {
           <h3>CONTACT US</h3>
           <div className="copy-email-container" onClick={handleCopyEmail}>
             <span className="copy-email">COPY EMAIL</span>
-            <img src={copy} alt="Copy icon" />
+            <img src={copy} className="copyEmailIMG" alt="Copy icon" />
           </div>
         </div>
         <p className="email">
